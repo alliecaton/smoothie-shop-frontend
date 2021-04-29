@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import Smoothies from '../components/smoothie/Smoothies'
+import SmoothieCreator from '../components/smoothie/SmoothieCreator'
 
 class SmoothieContainer extends Component {
     render() {
         return (
             <div>
-                smoothie container
+                <Smoothies />
+                <SmoothieCreator />
             </div>
         );
     }
