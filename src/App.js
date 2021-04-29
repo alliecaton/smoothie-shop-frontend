@@ -6,6 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import NavBar from './components/shared/NavBar'
+import SmoothieContainer from './containers/smoothieContainer'
 
 
 class App extends Component {
@@ -13,21 +15,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
+        <NavBar />
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/cart">Cart</Link>
-            </li>
-          </ul>
-        </nav>
-
         <Switch>
           <Route path="/cart">
             <CartContainer />
+          </Route>
+          <Route path="/smoothie">
+            <SmoothieContainer />
           </Route>
         </Switch>
       </div>
