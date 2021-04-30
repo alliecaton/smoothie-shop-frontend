@@ -28,6 +28,12 @@ const smoothieReducer = (state = {
                 smoothieIngredients: state.smoothieIngredients.filter(ingredient => ingredient.id !== action.payload )
             }
 
+        case 'REMOVE_ALL_INGREDIENTS': 
+            return {
+                ...state,
+                smoothieIngredients: []
+            }
+
         default:
             return state
         

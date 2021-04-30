@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
+import { connect } from 'react-redux'
+import { addCartItem } from '../../actions/cartActions'
 class SmoothieCreator extends Component {
     
     state = { smoothieIngredients: [] }
@@ -34,22 +36,30 @@ class SmoothieCreator extends Component {
     }
   
     handleSubmit = (e) => {
-      e.preventDefault();
+        e.preventDefault();
+        this.props.addCartItem(this.state.smoothieIngredients)
+        this.setState({smoothieIngredients: []})
+        this.props.removeAllIngredients()
 
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
-                <form onSubmit={(e)=> this.handleSubmit(e)}>
+                <form>
                     <h3>Select Ingredients:</h3>
                     {this.renderIngredients()}
 
-                    <input type="submit" value="Add Smoothie to Cart!" />
+                    <input onClick={(e)=> this.handleSubmit(e)} type="reset" value="Add Smoothie to Cart!" />
                 </form>
             </div>
         );
     }
 }
 
-export default SmoothieCreator;
+const mapDispatchToProps = dispatch => ({
+    addCartItem: (item) => dispatch(addCartItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(SmoothieCreator);
