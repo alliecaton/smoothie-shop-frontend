@@ -6,12 +6,11 @@ import Ingredient from './Ingredient.js'
 class Ingredients extends Component {
 
     componentDidMount() {
-        console.log('props', this.props)
         this.props.fetchIngredients()
     }
 
     render() {
-        console.log(this.props.ingredients)
+        console.log('props in render',this.props)
         return (
             <div>
                 an ingredient
@@ -21,11 +20,9 @@ class Ingredients extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        ingredients: state.ingredients
-    }
-}
+const mapStateToProps = (state) => ({
+    ingredients: state.smoothieReducer.ingredients
+})
 
 const mapDispatchToProps = dispatch => {
     return {

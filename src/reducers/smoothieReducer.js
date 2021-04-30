@@ -1,5 +1,6 @@
 const smoothieReducer = (state = { 
-    ingredients: []
+    ingredients: [], 
+    smoothieIngredients: []
 }, action) => {
 
     switch(action.type) {
@@ -12,7 +13,7 @@ const smoothieReducer = (state = {
         case 'GET_INGREDIENTS': 
             return {
                 ...state, 
-                cats: action.payload
+                ingredients: action.payload
             }
 
         default:
