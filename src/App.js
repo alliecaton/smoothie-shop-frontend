@@ -4,10 +4,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import NavBar from './components/shared/NavBar'
 import SmoothieContainer from './containers/smoothieContainer'
+import Home from './components/shared/Home'
+import './App.css';
 
 
 class App extends Component {
@@ -15,19 +16,21 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-        <NavBar />
-      <div>
-        <Switch>
-          <Route path="/cart">
-            <CartContainer />
-          </Route>
-          <Route path="/smoothie">
-            <SmoothieContainer />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-        
+            <NavBar />
+          <div>
+            <Switch>
+              <Route path="/cart">
+                <CartContainer />
+              </Route>
+              <Route path="/smoothie">
+                <SmoothieContainer />
+              </Route>
+            <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
       </div>
     );
   }
