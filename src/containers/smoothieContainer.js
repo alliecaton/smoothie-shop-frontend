@@ -7,14 +7,14 @@ import { fetchIngredients, addSmoothieIngredient, removeSmoothieIngredient } fro
 class SmoothieContainer extends Component {
     render() {
         return (
-            <div>
-                <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+            <div className="smoothie-container">
                 <SmoothieCreator 
                     fetchIngredients={this.props.fetchIngredients} 
                     ingredients={this.props.ingredients} 
                     addSmoothieIngredient={this.props.addSmoothieIngredient}
                     removeSmoothieIngredient={this.props.removeSmoothieIngredient}
                 />
+                <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
             </div>
         );
     }

@@ -11,7 +11,7 @@ import smoothieReducer from './reducers/smoothieReducer'
 
 
 const rootReducer = combineReducers({
-    cartReducer: null, 
+    cartReducer: cartReducer, 
     smoothieReducer: smoothieReducer
 })
 

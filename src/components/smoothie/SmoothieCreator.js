@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
-
-
 class SmoothieCreator extends Component {
     
     state = { smoothieIngredients: [] }
@@ -31,16 +29,14 @@ class SmoothieCreator extends Component {
             this.setState( prevState => ({
                 smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id )
             }));
-            console.log(this.state)
             this.props.removeSmoothieIngredient(addedIng.id)
         }
     }
   
-    // handleSubmit = (e) => {
-    //   e.preventDefault();
-    //   this.props.addRestaurant(this.state.text)
-    //   this.setState({ text: ''})
-    // }
+    handleSubmit = (e) => {
+      e.preventDefault();
+
+    }
 
     render() {
         return (
