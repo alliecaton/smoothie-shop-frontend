@@ -11,9 +11,16 @@ export const fetchIngredients = () => {
     }
 }
 
-export const updateSmoothieIngredients = (ingData) => {
+export const addSmoothieIngredient = (ingData) => {
     return {
         type: 'ADD_TO_SMOOTHIE', 
+        payload: ingData
+    }
+}
+
+export const removeSmoothieIngredient = (ingData) => {
+    return {
+        type: 'REMOVE_FROM_SMOOTHIE', 
         payload: ingData
     }
 }
