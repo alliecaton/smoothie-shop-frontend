@@ -14,7 +14,7 @@ class SmoothieCreator extends Component {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
                 <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input type="checkbox"  id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+                <input type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
@@ -40,7 +40,6 @@ class SmoothieCreator extends Component {
         this.props.addCartItem(this.state.smoothieIngredients)
         this.setState({smoothieIngredients: []})
         this.props.removeAllIngredients()
-
     }
 
     render() {
