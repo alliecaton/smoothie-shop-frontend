@@ -6,7 +6,6 @@ export const fetchIngredients = () => {
             return r.json()
         })
         .then(json => {
-            console.log('the json', json)
             dispatch({ type: 'GET_INGREDIENTS', payload: json })
         })
     }

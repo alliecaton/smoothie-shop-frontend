@@ -1,17 +1,31 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
-import Ingredients from './Ingredients'
+import { connect } from 'react-redux'
+import { fetchIngredients } from '../../actions/smoothieActions.js'
+
 
 class SmoothieCreator extends Component {
     
-    state = { ingredients: [] }
+    state = { smoothieIngredients: [] }
 
-    // handleSelectionChange = (e) => {
-    //     console.log(this.state)
-    //     this.setState({
-    //       ingredients: [...this.state.ingredients, e.target.value]
-    //     });
-    // }
+    componentDidMount() {
+        this.props.fetchIngredients()
+    }
+
+    renderIngredients = () => {
+        return this.props.ingredients.map((ingredient) => (
+            <div key={ingredient.id} >
+                <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
+                <input type="checkbox" id={ingredient.id} value={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+            </div>
+        ))
+    }
+
+    handleSelectionChange = (e) => {
+        this.setState( prevState => ({
+            smoothieIngredients: [...prevState.smoothieIngredients, e.target.value]
+        }));
+    }
   
     // handleSubmit = (e) => {
     //   e.preventDefault();
@@ -20,22 +34,28 @@ class SmoothieCreator extends Component {
     // }
 
     render() {
+        console.log(this.state)
         return (
             <div>
                 <form onSubmit={(e)=> this.handleSubmit(e)}>
                     <h3>Select Ingredients:</h3>
-                    <Ingredients />
-                    <label htmlFor="strawberry"> <Ingredient /> </label>
-                    <input type="checkbox" id="strawberry" value="strawberry" onChange={this.handleSelectionChange} /><br></br>
+                    {this.renderIngredients()}
 
-                    <label htmlFor="banana"> <Ingredient /> </label>
-                    <input type="checkbox" value="banana" id="banana" /><br></br>
-
-                    <input type="submit" />
+                    <input type="submit" value="Add Smoothie to Cart!" />
                 </form>
             </div>
         );
     }
 }
 
-export default SmoothieCreator;
+const mapStateToProps = (state) => ({
+    ingredients: state.smoothieReducer.ingredients
+})
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchIngredients: () => dispatch(fetchIngredients())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SmoothieCreator);
