@@ -24,3 +24,9 @@ export const removeSmoothieIngredient = (ingData) => {
         payload: ingData
     }
 }
+
+export const removeAllIngredients = () => {
+    return {
+        type: 'REMOVE_ALL_INGREDIENTS'
+    }
+}

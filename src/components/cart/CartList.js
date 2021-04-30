@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import CartItem from './CartItem'
 
 class CartList extends Component {
-    render() {
 
+    renderItems = () => {
+        return this.props.items.map((item) => (
+            <li key={item.id}><CartItem item={item} key={item.id} /></li>
+        ))
+    }
+
+    render() {
         return (
             <div>
-                <CartItem item={'this is an item'}/>
+                {this.renderItems()}
             </div>
         );
     }
