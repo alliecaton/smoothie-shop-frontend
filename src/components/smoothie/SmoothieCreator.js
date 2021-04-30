@@ -16,18 +16,18 @@ class SmoothieCreator extends Component {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
                 <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input type="checkbox" id={ingredient.id} value={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+                <input type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={this.handleSelectionChange} /><br></br>
             </div>
         ))
     }
 
     handleSelectionChange = (e) => {
-        console.log(this.props.ingredients)
+        let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
+        console.log('added', addedIng)
         this.setState( prevState => ({
-            smoothieIngredients: [...prevState.smoothieIngredients, e.target.value]
+            smoothieIngredients: [...prevState.smoothieIngredients, addedIng]
         }));
-        this.props.updateSmoothieIngredients(e.target.value)
-
+        this.props.updateSmoothieIngredients(addedIng)
     }
   
     // handleSubmit = (e) => {
