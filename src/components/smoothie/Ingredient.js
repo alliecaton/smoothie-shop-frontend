@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Ingredient = () => {
+const Ingredient = (props) => {
     return (
-        <span>
-            an ingredient
-        </span>
+        <div>
+            {props.ingredient.name}
+        </div>
     );
 }
 
