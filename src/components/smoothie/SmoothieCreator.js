@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
+import Ingredients from './Ingredients'
 
 class SmoothieCreator extends Component {
     
@@ -23,6 +24,7 @@ class SmoothieCreator extends Component {
             <div>
                 <form onSubmit={(e)=> this.handleSubmit(e)}>
                     <h3>Select Ingredients:</h3>
+                    <Ingredients />
                     <label htmlFor="strawberry"> <Ingredient /> </label>
                     <input type="checkbox" id="strawberry" value="strawberry" onChange={this.handleSelectionChange} /><br></br>
 
