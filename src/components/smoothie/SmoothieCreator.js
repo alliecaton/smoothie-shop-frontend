@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
-import { connect } from 'react-redux'
-import { fetchIngredients, updateSmoothieIngredients } from '../../actions/smoothieActions.js'
 
 
 class SmoothieCreator extends Component {
@@ -16,18 +14,26 @@ class SmoothieCreator extends Component {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
                 <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={this.handleSelectionChange} /><br></br>
+                <input type="checkbox"  id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
 
+    //refactor this ew
     handleSelectionChange = (e) => {
         let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
-        console.log('added', addedIng)
-        this.setState( prevState => ({
-            smoothieIngredients: [...prevState.smoothieIngredients, addedIng]
-        }));
-        this.props.updateSmoothieIngredients(addedIng)
+        if (e.target.checked) {
+            this.setState( prevState => ({
+                smoothieIngredients: [...prevState.smoothieIngredients, addedIng]
+            }));
+            this.props.addSmoothieIngredient(addedIng)
+        } else if (!e.target.checked) {
+            this.setState( prevState => ({
+                smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id )
+            }));
+            console.log(this.state)
+            this.props.removeSmoothieIngredient(addedIng.id)
+        }
     }
   
     // handleSubmit = (e) => {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Smoothie from '../components/smoothie/Smoothie'
 import SmoothieCreator from '../components/smoothie/SmoothieCreator'
 import { connect } from 'react-redux'
-import { fetchIngredients, updateSmoothieIngredients } from '../actions/smoothieActions.js'
+import { fetchIngredients, addSmoothieIngredient, removeSmoothieIngredient } from '../actions/smoothieActions.js'
 
 class SmoothieContainer extends Component {
     render() {
@@ -12,7 +12,8 @@ class SmoothieContainer extends Component {
                 <SmoothieCreator 
                     fetchIngredients={this.props.fetchIngredients} 
                     ingredients={this.props.ingredients} 
-                    updateSmoothieIngredients={this.props.updateSmoothieIngredients}    
+                    addSmoothieIngredient={this.props.addSmoothieIngredient}
+                    removeSmoothieIngredient={this.props.removeSmoothieIngredient}
                 />
             </div>
         );
@@ -26,7 +27,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
         fetchIngredients: () => dispatch(fetchIngredients()),
-        updateSmoothieIngredients: (ingredient) => dispatch(updateSmoothieIngredients(ingredient))
+        addSmoothieIngredient: (ingredient) => dispatch(addSmoothieIngredient(ingredient)), 
+        removeSmoothieIngredient: (ingredient) => dispatch(removeSmoothieIngredient(ingredient))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SmoothieContainer);

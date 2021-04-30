@@ -7,7 +7,7 @@ class Smoothie extends Component {
 
     renderIngredients = () => {
         return this.props.smoothieIngredients.map((ingredient) => (
-            <li><Ingredient ingredient={ingredient} key={ingredient.id} /></li>
+            <li key={ingredient.id}><Ingredient ingredient={ingredient} key={ingredient.id} /></li>
         ))
     }
 
@@ -21,7 +21,6 @@ class Smoothie extends Component {
     // }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 Current Ingredients: 
