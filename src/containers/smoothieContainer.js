@@ -8,7 +8,7 @@ class SmoothieContainer extends Component {
     render() {
         return (
             <div>
-                <Smoothie />
+                <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
                 <SmoothieCreator 
                     fetchIngredients={this.props.fetchIngredients} 
                     ingredients={this.props.ingredients} 
@@ -19,10 +19,9 @@ class SmoothieContainer extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => ({
     ingredients: state.smoothieReducer.ingredients,
-    smoothieIngredients: state.smoothieIngredients
+    smoothieIngredients: state.smoothieReducer.smoothieIngredients
 })
 
 const mapDispatchToProps = dispatch => ({
