@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
-import Smoothies from '../components/smoothie/Smoothies'
+import Smoothie from '../components/smoothie/Smoothie'
 import SmoothieCreator from '../components/smoothie/SmoothieCreator'
+import { connect } from 'react-redux'
+import { fetchIngredients, updateSmoothieIngredients } from '../actions/smoothieActions.js'
 
 class SmoothieContainer extends Component {
     render() {
         return (
             <div>
-                <Smoothies />
-                <SmoothieCreator />
+                <Smoothie />
+                <SmoothieCreator 
+                    fetchIngredients={this.props.fetchIngredients} 
+                    ingredients={this.props.ingredients} 
+                    updateSmoothieIngredients={this.props.updateSmoothieIngredients}    
+                />
             </div>
         );
     }
 }
 
-export default SmoothieContainer;
+
+const mapStateToProps = (state) => ({
+    ingredients: state.smoothieReducer.ingredients,
+    smoothieIngredients: state.smoothieIngredients
+})
+
+const mapDispatchToProps = dispatch => ({
+        fetchIngredients: () => dispatch(fetchIngredients()),
+        updateSmoothieIngredients: (ingredient) => dispatch(updateSmoothieIngredients(ingredient))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SmoothieContainer);

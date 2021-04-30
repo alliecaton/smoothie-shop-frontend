@@ -16,11 +16,16 @@ const smoothieReducer = (state = {
                 ingredients: action.payload
             }
 
+        case 'ADD_TO_SMOOTHIE':
+            return {
+                ...state, 
+                smoothieIngredients: [...state.smoothieIngredients, action.payload]
+            }
+
         default:
             return state
         
     }
 
 }
-
 export default smoothieReducer

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
-import { fetchIngredients } from '../../actions/smoothieActions.js'
+import { fetchIngredients, updateSmoothieIngredients } from '../../actions/smoothieActions.js'
 
 
 class SmoothieCreator extends Component {
@@ -22,9 +22,12 @@ class SmoothieCreator extends Component {
     }
 
     handleSelectionChange = (e) => {
+        console.log(this.props.ingredients)
         this.setState( prevState => ({
             smoothieIngredients: [...prevState.smoothieIngredients, e.target.value]
         }));
+        this.props.updateSmoothieIngredients(e.target.value)
+
     }
   
     // handleSubmit = (e) => {
@@ -34,7 +37,6 @@ class SmoothieCreator extends Component {
     // }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <form onSubmit={(e)=> this.handleSubmit(e)}>
@@ -48,14 +50,4 @@ class SmoothieCreator extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    ingredients: state.smoothieReducer.ingredients
-})
-
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchIngredients: () => dispatch(fetchIngredients())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SmoothieCreator);
+export default SmoothieCreator;
