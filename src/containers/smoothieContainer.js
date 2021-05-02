@@ -3,6 +3,7 @@ import Smoothie from '../components/smoothie/Smoothie'
 import SmoothieCreator from '../components/smoothie/SmoothieCreator'
 import { connect } from 'react-redux'
 import { fetchIngredients, addSmoothieIngredient, removeSmoothieIngredient, removeAllIngredients } from '../actions/smoothieActions.js'
+import { Container, Row, Col } from 'react-bootstrap';
 
 class SmoothieContainer extends Component {
 
@@ -10,14 +11,20 @@ class SmoothieContainer extends Component {
     render() {
         return (
             <div className="smoothie-container">
-                <SmoothieCreator 
-                    fetchIngredients={this.props.fetchIngredients} 
-                    ingredients={this.props.ingredients} 
-                    addSmoothieIngredient={this.props.addSmoothieIngredient}
-                    removeSmoothieIngredient={this.props.removeSmoothieIngredient}
-                    removeAllIngredients={this.props.removeAllIngredients}
-                />
-                <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+                <Container >
+                    <Row>
+                        <SmoothieCreator 
+                            fetchIngredients={this.props.fetchIngredients} 
+                            ingredients={this.props.ingredients} 
+                            addSmoothieIngredient={this.props.addSmoothieIngredient}
+                            removeSmoothieIngredient={this.props.removeSmoothieIngredient}
+                            removeAllIngredients={this.props.removeAllIngredients}
+                        />
+
+                        <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+
+                    </Row>
+                </Container>
             </div>
         );
     }

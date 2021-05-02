@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
+import { Col } from 'react-bootstrap';
 class SmoothieCreator extends Component {
     
     state = { smoothieIngredients: [] }
@@ -38,7 +39,7 @@ class SmoothieCreator extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.addCartItem(this.state.smoothieIngredients)
+        this.props.addCartItem(this.state.smoothie )
         this.setState({smoothieIngredients: []})
         this.props.removeAllIngredients()
     }
@@ -46,12 +47,14 @@ class SmoothieCreator extends Component {
     render() {
         return (
             <div>
+                <Col>
                 <form>
                     <h3>Select Ingredients:</h3>
                     {this.renderIngredients()}
 
                     <input onClick={(e)=> this.handleSubmit(e)} type="reset" value="Add Smoothie to Cart!" />
                 </form>
+                </Col>
             </div>
         );
     }
