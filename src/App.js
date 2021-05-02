@@ -9,6 +9,7 @@ import NavBar from './components/shared/NavBar'
 import SmoothieContainer from './containers/smoothieContainer'
 import Home from './components/shared/Home'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends Component {
