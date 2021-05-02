@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 import { HiShoppingCart } from 'react-icons/hi';
+import { Container } from 'react-bootstrap'
 
 const NavBar = () => {
     return (
+    <Container className="nav-bar-edit">
         <Navbar bg="light" expand="lg" >
             
              <Link to="/">
@@ -35,17 +37,18 @@ const NavBar = () => {
                 </svg>
             </Navbar.Brand>
             </Link>
-        <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-            <Link to="/smoothie"><Navbar.Brand>Build a Smoothie</Navbar.Brand></Link>
+
+            <Link to="/smoothie">Build a Smoothie</Link>
+
+        <Navbar.Collapse className="justify-content-end">
             <Link to="/cart">
-            <Navbar.Brand>
-                <HiShoppingCart size={50}/>
-            </Navbar.Brand>
+                <HiShoppingCart />
             </Link>
-        </Nav>
         </Navbar.Collapse>
+
+
     </Navbar>  
+    </Container>
     );
 }
 
