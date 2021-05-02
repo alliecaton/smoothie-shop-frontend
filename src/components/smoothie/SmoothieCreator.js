@@ -37,13 +37,13 @@ class SmoothieCreator extends Component {
   
     handleSubmit = (e) => {
         e.preventDefault();
+
         this.props.addCartItem(this.state.smoothieIngredients)
         this.setState({smoothieIngredients: []})
         this.props.removeAllIngredients()
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <form>

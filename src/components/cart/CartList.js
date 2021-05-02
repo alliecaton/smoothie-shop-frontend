@@ -5,7 +5,7 @@ class CartList extends Component {
 
     renderItems = () => {
         return this.props.items.map((item) => (
-            <li key={item.id}><CartItem item={item} key={item.id} /></li>
+            <li><CartItem item={item} key={item.id} /></li>
         ))
     }
 
