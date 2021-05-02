@@ -1,21 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import { HiShoppingCart } from 'react-icons/hi';
 
 const NavBar = () => {
     return (
-        <Navbar bg="light" >
-             <Navbar.Brand href="/">
+        <Navbar bg="light" expand="lg" >
+            
+             <Link to="/">
+             <Navbar.Brand>
                 <svg className="svg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink"
-                viewBox="-200 -100 700 700" xmlns="preserve">
+                viewBox="-100 -50 600 600" xmlns="preserve">
                 <defs>  
                         <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%" > 
 
-                            <stop offset="0%" stop-color="#6666ff">
+                            <stop offset="0%" stopColor="#6666ff">
                                 <animate attributeName="stop-color" values="#6666ff; #01FF89; #6666ff" dur="4s" repeatCount="indefinite"></animate>
                             </stop>
 
-                            <stop offset="100%" stop-color="#01FF89">
+                            <stop offset="100%" stopColor="#01FF89">
                                 <animate attributeName="stop-color" values="#01FF89; #6666ff; #01FF89" dur="4s" repeatCount="indefinite"></animate>
                             </stop>
 
@@ -31,10 +34,15 @@ const NavBar = () => {
                         C343.856,118.56,353.232,138.208,356.4,160.032z"/>
                 </svg>
             </Navbar.Brand>
+            </Link>
         <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-            <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link href="/smoothie">Build a Smoothie</Nav.Link>
+            <Link to="/smoothie"><Navbar.Brand>Build a Smoothie</Navbar.Brand></Link>
+            <Link to="/cart">
+            <Navbar.Brand>
+                <HiShoppingCart size={50}/>
+            </Navbar.Brand>
+            </Link>
         </Nav>
         </Navbar.Collapse>
     </Navbar>  
