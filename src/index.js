@@ -8,11 +8,13 @@ import { combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import cartReducer from './reducers/cartReducer';
 import smoothieReducer from './reducers/smoothieReducer'
+import checkoutReducer from './reducers/checkoutReducer'
 
 
 const rootReducer = combineReducers({
     cartReducer: cartReducer, 
-    smoothieReducer: smoothieReducer
+    smoothieReducer: smoothieReducer, 
+    checkoutReducer: checkoutReducer
 })
 
 const store = createStore(rootReducer, 
