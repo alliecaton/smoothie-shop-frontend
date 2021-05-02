@@ -1,6 +1,7 @@
 const smoothieReducer = (state = { 
     ingredients: [], 
-    smoothieIngredients: []
+    smoothieIngredients: [], 
+    smoothiePrice: 0
 }, action) => {
 
     switch(action.type) {
@@ -19,7 +20,8 @@ const smoothieReducer = (state = {
         case 'ADD_TO_SMOOTHIE':
             return {
                 ...state, 
-                smoothieIngredients: [...state.smoothieIngredients, action.payload]
+                smoothieIngredients: [...state.smoothieIngredients, action.payload], 
+                smoothiePrice: parseFloat(state.smoothiePrice) + parseFloat(action.payload.price)
             }
 
         case 'REMOVE_FROM_SMOOTHIE': 
