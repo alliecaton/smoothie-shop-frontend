@@ -10,8 +10,8 @@ class CartContainer extends Component {
         return (
             <div>
                 <CartList items={this.props.items} />
-                <CartTotal totalPrice={this.props.totalPrice} />
                 <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
+                <CartTotal totalPrice={this.props.totalPrice} />
             </div>
         );
     }
