@@ -7,7 +7,7 @@ class CartContainer extends Component {
         return (
             <div>
                 Cart Container
-                {/* <CartList items={this.props.items} /> */}
+                <CartList items={this.props.items} />
             </div>
         );
     }
