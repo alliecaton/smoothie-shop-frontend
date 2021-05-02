@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import CartList from '../components/cart/CartList.js'
+import CartList from '../components/cart/CartList'
 import { connect } from 'react-redux'
-import CartTotal from '../components/cart/CartTotal.js'
+import CartTotal from '../components/cart/CartTotal'
+import CheckoutButton from '../components/cart/CheckoutButton'
+import CheckoutForm from '../components/cart/CheckoutForm'
 
 class CartContainer extends Component {
     render() {
@@ -9,6 +11,7 @@ class CartContainer extends Component {
             <div>
                 <CartList items={this.props.items} />
                 <CartTotal totalPrice={this.props.totalPrice} />
+                <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
             </div>
         );
     }

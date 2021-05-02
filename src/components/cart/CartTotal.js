@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CartTotal extends Component {
-    render() {
-        return (
-            <div>
-                <h5> Checkout Total: {this.props.totalPrice} </h5>
-            </div>
-        );
-    }
+const cartTotal = (props) => {
+    return (
+        <div>
+            <h5> Checkout Total: {props.totalPrice} </h5>
+        </div>
+    );
 }
 
-export default CartTotal;
+export default cartTotal;

@@ -4,3 +4,12 @@ export const addCartItem = (itemData) => {
         payload: itemData
     }
 }
+
+// export const Checkout = (data) => {
+//     return {
+//         type: 'CHECKOUT', 
+//         payload: data
+//     }
+// }
+
+
