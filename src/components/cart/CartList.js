@@ -12,6 +12,7 @@ class CartList extends Component {
     render() {
         return (
             <div>
+                <h5>Order:</h5>
                 {this.renderItems()}
             </div>
         );

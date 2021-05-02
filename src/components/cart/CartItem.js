@@ -6,7 +6,7 @@ const CartItem = (props) => {
         <div>
             {props.item.map(ingredient => (
             <span>
-                {`  ${ingredient.name}`} || 
+                {`  ${ingredient.name}, ${ingredient.price}`} || 
             </span>
         ))}
         </div>
