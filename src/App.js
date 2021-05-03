@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Router>
             <NavBar />
-          <div>
+          <div className="homepage">
             <Switch>
               <Route path="/cart">
                 <CartContainer />

@@ -10,6 +10,7 @@ class CartList extends Component {
     }
 
     render() {
+        console.log('items prop', this.props.items)
         return (
             <div>
                 <h5>Order:</h5>

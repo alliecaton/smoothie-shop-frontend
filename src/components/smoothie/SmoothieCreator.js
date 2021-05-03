@@ -3,10 +3,9 @@ import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
-import Errors from '../shared/Errors.js'
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [], error: '' }
+    state = { smoothieIngredients: [], error: ''}
 
     componentDidMount() {
         this.props.fetchIngredients()

@@ -1,3 +1,10 @@
+
+.homepage {
+  background-image: url('./images/smoothie-bg.jpg') ;
+  opacity: 80%;
+}
+
+
 .ingredient-box {
     display: flex;
     flex-flow: row wrap;
@@ -22,7 +29,6 @@ svg {
     width: 50px;
     height: 50px;
 }
-
 
 .nav-bar-edit {
   padding: 20px;
