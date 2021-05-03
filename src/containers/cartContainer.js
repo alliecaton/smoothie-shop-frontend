@@ -25,9 +25,4 @@ const mapStateToProps = (state) => ({
     totalPrice: state.smoothieReducer.smoothiePrice
 })
 
-const mapDispatchToProps = dispatch => ({
-        // fetchIngredients: () => dispatch(fetchIngredients()),
-        // addSmoothieIngredient: (ingredient) => dispatch(addSmoothieIngredient(ingredient)), 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);
+export default connect(mapStateToProps)(CartContainer);

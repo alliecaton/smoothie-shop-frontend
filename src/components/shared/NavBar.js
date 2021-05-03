@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 import { HiShoppingCart } from 'react-icons/hi';
 import { Container } from 'react-bootstrap'
+import CartCount from './CartCount.js'
 
 const NavBar = () => {
     return (
@@ -41,6 +42,7 @@ const NavBar = () => {
             <Link className="nav-text" to="/smoothie">BUILD A SMOOTHIE</Link>
 
         <Navbar.Collapse className="justify-content-end">
+            <CartCount />
             <Link to="/cart">
                 <HiShoppingCart />
             </Link>
@@ -52,4 +54,7 @@ const NavBar = () => {
     );
 }
 
+
+
 export default NavBar;
+
