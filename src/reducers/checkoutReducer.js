@@ -1,23 +1,13 @@
 
-export default function cartReducer(state= {
-    items: [], 
-    orderType: '', // delivery or takeout
-    totalPrice: 0, 
-    customerName: '', 
-    address: '', 
-    cardNumber: '', 
-    cardExp: '',
-    cardSecurityNum: '',
-    note: ''
-}, action) {
+export default function cartReducer(state=  {
+    order: []}, action) {
 
     switch (action.type) {
 
         case 'CHECKOUT': 
-        return {
-            ...state, 
-            items: [...state.smoothieIngredients, action.payload.items], 
-            orderType: action.payload.orderType, // delivery or takeout
+
+        const newOrder = {
+            items: action.payload.items,
             totalPrice: action.payload.totalPrice, 
             customerName: action.payload.customerName, 
             address: action.payload.address, 
@@ -26,6 +16,11 @@ export default function cartReducer(state= {
             cardSecurityNum: action.payload.cardSecurityNum,
             note: action.payload.note
         }
+
+        return {
+            order: [...state.order, newOrder]
+        }
+
 
         default: 
             return state

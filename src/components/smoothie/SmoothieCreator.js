@@ -5,7 +5,7 @@ import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [], error: ''}
+    state = { smoothieIngredients: [], ingredientIds: [], error: ''}
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -25,12 +25,14 @@ class SmoothieCreator extends Component {
         let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
         if (e.target.checked) {
             this.setState( prevState => ({
-                smoothieIngredients: [...prevState.smoothieIngredients, addedIng]
+                smoothieIngredients: [...prevState.smoothieIngredients, addedIng], 
+                ingredientIds: [...prevState.ingredientIds, addedIng.id]
             }));
             this.props.addSmoothieIngredient(addedIng)
         } else if (!e.target.checked) {
             this.setState( prevState => ({
-                smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id )
+                smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id ), 
+                ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id )
             }));
             this.props.removeSmoothieIngredient(addedIng.id)
         }
@@ -39,8 +41,8 @@ class SmoothieCreator extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
             if (this.state.smoothieIngredients.length > 0) {
-                this.props.addCartItem(this.state.smoothieIngredients )
-                this.setState({smoothieIngredients: []})
+                this.props.addCartItem(this.state)
+                this.setState({smoothieIngredients: [], ingredientIds: []})
                 this.props.removeAllIngredients()
             } else {
                 this.setState({

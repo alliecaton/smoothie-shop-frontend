@@ -8,7 +8,7 @@ import CartCount from './CartCount.js'
 const NavBar = () => {
     return (
     <Container className="nav-bar-edit">
-        <Navbar bg="light" expand="lg" >
+        <Navbar bg="light" >
              <Link to="/">
              <Navbar.Brand>
                 <svg className="svg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink"

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { checkout, emptyCart } from '../../actions/cartActions'
+
 
 class CheckoutForm extends Component {
 
     state = {
-        items: this.props.items, 
-        // orderType: '', // delivery or takeout
+        items: this.props.itemIds, 
         totalPrice: this.props.totalPrice, 
         customerName: '', 
         address: '', 
@@ -23,7 +25,8 @@ class CheckoutForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        this.props.checkout(this.state)
+        this.props.emptyCart()
     }
 
     render() {
@@ -33,9 +36,6 @@ class CheckoutForm extends Component {
                     <br></br>
                     <label>Please Enter Checkout Details</label><br></br>
 
-                    {/* <input type="hidden" value={this.props.items} name="items" onChange={this.handleChange} />
-                    <input type="hidden" value={this.props.totalPrice} name="totalPrice" onChange={this.handleChange} /> */}
-                    
                     <label htmlFor="customerName">Name:</label>
                     <input id="customerName" type="text" name="customerName" onChange={this.handleChange} /><br></br>
 
@@ -62,4 +62,9 @@ class CheckoutForm extends Component {
     }
 }
 
-export default CheckoutForm;
+const mapDispatchToProps = dispatch => ({
+    checkout: (data) => dispatch(checkout(data)),
+    emptyCart: () => dispatch(emptyCart())
+})
+
+export default connect(null, mapDispatchToProps)(CheckoutForm);
