@@ -1,6 +1,7 @@
 const smoothieReducer = (state = { 
     ingredients: [], 
     smoothieIngredients: [], 
+    ingredientIds: [],
     smoothiePrice: 0
 }, action) => {
 
@@ -21,6 +22,7 @@ const smoothieReducer = (state = {
             return {
                 ...state, 
                 smoothieIngredients: [...state.smoothieIngredients, action.payload], 
+                ingredientIds: [...state.ingredientIds, action.payload.id],
                 smoothiePrice: parseFloat(state.smoothiePrice) + parseFloat(action.payload.price)
             }
 
@@ -33,7 +35,8 @@ const smoothieReducer = (state = {
         case 'REMOVE_ALL_INGREDIENTS': 
             return {
                 ...state,
-                smoothieIngredients: []
+                smoothieIngredients: [],
+                ingredientIds: []
             }
 
         default:
