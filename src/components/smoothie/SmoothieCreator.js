@@ -3,9 +3,10 @@ import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
+import Errors from '../shared/Errors.js'
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [] }
+    state = { smoothieIngredients: [], error: '' }
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -38,20 +39,27 @@ class SmoothieCreator extends Component {
   
     handleSubmit = (e) => {
         e.preventDefault();
-
-        this.props.addCartItem(this.state.smoothie )
-        this.setState({smoothieIngredients: []})
-        this.props.removeAllIngredients()
+            if (this.state.smoothieIngredients.length > 0) {
+                this.props.addCartItem(this.state.smoothieIngredients )
+                this.setState({smoothieIngredients: []})
+                this.props.removeAllIngredients()
+            } else {
+                this.setState({
+                    ...this.state, 
+                    error: 'Please select at least one ingredient'
+                })
+            }
     }
 
     render() {
+
         return (
             <div>
                 <Col>
                 <form>
                     <h3>Select Ingredients:</h3>
                     {this.renderIngredients()}
-
+                    {this.state.error}<br></br>
                     <input onClick={(e)=> this.handleSubmit(e)} type="reset" value="Add Smoothie to Cart!" />
                 </form>
                 </Col>

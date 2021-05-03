@@ -27,3 +27,12 @@ svg {
 .nav-bar-edit {
   padding: 20px;
 }
+
+.line {
+  color: rgb(250, 217, 133);
+}
+
+.nav-text {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #6666ff;
+}

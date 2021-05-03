@@ -8,7 +8,6 @@ const NavBar = () => {
     return (
     <Container className="nav-bar-edit">
         <Navbar bg="light" expand="lg" >
-            
              <Link to="/">
              <Navbar.Brand>
                 <svg className="svg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink"
@@ -34,11 +33,12 @@ const NavBar = () => {
                         C143.472,105.888,189.744,64,246,64c21.152,0,40.736,6.24,57.632,16.48l-8.8,26.464c-2.816,8.384,1.728,17.44,10.112,20.224
                         C306.64,127.744,308.336,128,310,128c6.688,0,12.928-4.224,15.168-10.944l4.8-14.368
                         C343.856,118.56,353.232,138.208,356.4,160.032z"/>
-                </svg>
+                </svg> <span className="line">|</span>
             </Navbar.Brand>
             </Link>
+            
 
-            <Link to="/smoothie">Build a Smoothie</Link>
+            <Link className="nav-text" to="/smoothie">BUILD A SMOOTHIE</Link>
 
         <Navbar.Collapse className="justify-content-end">
             <Link to="/cart">
