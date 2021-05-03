@@ -1,15 +1,28 @@
+import cuid from 'cuid'
 
 export default function cartReducer(state= {
-    items: []
-}, action) {
+    cartItems: [ {
+        id: null,
+        ingredients: []
+    }]}, action) {
 
     switch (action.type) {
 
         case 'ADD_ITEM': 
-        return {
-            ...state, 
-            items: [...state.items, action.payload]
+        
+        const newItem = {
+            id: cuid(),
+            ingredients: [action.payload]
         }
+        
+        return {
+                cartItems: [...state.cartItems, newItem ]
+                // {
+                //     id: state.cartItems.id += 1,
+                //     ingredients: [action.payload]
+                // }],
+            }
+
 
         default: 
             return state
