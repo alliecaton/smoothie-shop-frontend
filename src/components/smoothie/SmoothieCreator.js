@@ -26,7 +26,7 @@ class SmoothieCreator extends Component {
         if (e.target.checked) {
             this.setState( prevState => ({
                 smoothieIngredients: [...prevState.smoothieIngredients, addedIng], 
-                ingredientIds: [...prevState.ingredientIds, addedIng.id]
+                ingredientIds: [...prevState.ingredientIds, addedIng.id], 
             }));
             this.props.addSmoothieIngredient(addedIng)
         } else if (!e.target.checked) {

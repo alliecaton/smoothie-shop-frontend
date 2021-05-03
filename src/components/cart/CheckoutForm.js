@@ -6,7 +6,7 @@ import { checkout, emptyCart } from '../../actions/cartActions'
 class CheckoutForm extends Component {
 
     state = {
-        items: this.props.itemIds, 
+        items: this.props.items, 
         totalPrice: this.props.totalPrice, 
         customerName: '', 
         address: '', 
