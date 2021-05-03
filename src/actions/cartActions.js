@@ -5,31 +5,7 @@ export const addCartItem = (data) => {
         type: 'ADD_ITEM', 
         payload: data
     }
-
-    // return (dispatch) => {
-    //     // dispatch({type: 'LOGIN_REQUEST_STARTED'})
-
-    //     return fetch('http://localhost:3001/products', {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(humps.decamelizeKeys({product: data.ingredientIds}))
-    //     })
-    //     .then(resp => resp.json())
-    //     .then(json => {
-    //         console.log('this is the posted CART LINE obj', json)
-    //         dispatch({type: 'ADD_ITEM', payload: data})
-    //     })
-    // }
 }
-
-// export const checkout = (data) => {
-//     return {
-//         type: 'CHECKOUT', 
-//         payload: data
-//     }
-// }
 
 export const emptyCart = () => {
     return {
