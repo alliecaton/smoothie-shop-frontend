@@ -1,10 +1,7 @@
 import cuid from 'cuid'
 
 export default function cartReducer(state= {
-    cartItems: [ {
-        id: null,
-        ingredients: []
-    }]}, action) {
+    cartItems: []}, action) {
 
     switch (action.type) {
 
@@ -17,10 +14,6 @@ export default function cartReducer(state= {
         
         return {
                 cartItems: [...state.cartItems , newItem ]
-                // {
-                //     id: state.cartItems.id += 1,
-                //     ingredients: [action.payload]
-                // }],
             }
 
 
