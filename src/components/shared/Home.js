@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 const Home = () => {
     return (
-        <div >
+        <div className="homepage">
             <Container>
             <div>
                 <h1>Smoothie Shop!</h1>

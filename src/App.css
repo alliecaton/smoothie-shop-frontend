@@ -4,6 +4,15 @@
   opacity: 80%;
 }
 
+.description {
+  background-color: whitesmoke;
+  opacity: 70%;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 50%;
+  height: auto;
+}
 
 .ingredient-box {
     display: flex;
