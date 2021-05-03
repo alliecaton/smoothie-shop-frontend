@@ -12,11 +12,11 @@ export default function cartReducer(state= {
         
         const newItem = {
             id: cuid(),
-            ingredients: [action.payload]
+            ingredients: action.payload
         }
         
         return {
-                cartItems: [...state.cartItems, newItem ]
+                cartItems: [...state.cartItems , newItem ]
                 // {
                 //     id: state.cartItems.id += 1,
                 //     ingredients: [action.payload]
