@@ -8,9 +8,9 @@ export default function cartReducer(state= {
         case 'ADD_ITEM': 
         
         const newItem = {
-            id: cuid(),
             ingredients: action.payload.smoothieIngredients,
-            ingredientIds: action.payload.ingredientIds
+            ingredientIds: action.payload.ingredientIds, 
+            price: action.payload.price
         }
         
         return {

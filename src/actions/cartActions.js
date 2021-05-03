@@ -1,9 +1,21 @@
 import humps from 'humps';
 
-export const addCartItem = (itemData) => {
-    return {
-        type: 'ADD_ITEM', 
-        payload: itemData
+export const addCartItem = (data) => {
+    return (dispatch) => {
+        // dispatch({type: 'LOGIN_REQUEST_STARTED'})
+
+        return fetch('http://localhost:3001/products', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(humps.decamelizeKeys({product: data.ingredientIds}))
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            console.log('this is the posted CART LINE obj', json)
+            dispatch({type: 'ADD_ITEM', payload: data})
+        })
     }
 }
 
@@ -22,12 +34,11 @@ export const emptyCart = () => {
 
 
 export const checkout = (data) => {
+    
         return (dispatch) => {
             // dispatch({type: 'LOGIN_REQUEST_STARTED'})
     
             return fetch('http://localhost:3001/orders', {
-    
-                // credentials: "include",
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
