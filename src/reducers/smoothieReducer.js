@@ -2,20 +2,23 @@ const smoothieReducer = (state = {
     ingredients: [], 
     smoothieIngredients: [], 
     ingredientIds: [],
-    smoothiePrice: 0
+    smoothiePrice: 0,
+    loading: false
 }, action) => {
 
     switch(action.type) {
-        // case 'LOADING_INGREDIENTS': 
-        //     return {
-        //         ...state, 
-        //         ingredients: [...state.ingredients]
-        //     }
+        case 'LOADING_INGREDIENTS': 
+            return {
+                ...state, 
+                ingredients: [...state.ingredients],
+                loading: true
+            }
 
         case 'GET_INGREDIENTS': 
             return {
                 ...state, 
-                ingredients: action.payload
+                ingredients: action.payload,
+                loading: false
             }
 
         case 'ADD_TO_SMOOTHIE':

@@ -3,10 +3,19 @@ import Smoothie from '../components/smoothie/Smoothie'
 import SmoothieCreator from '../components/smoothie/SmoothieCreator'
 import { connect } from 'react-redux'
 import { fetchIngredients, addSmoothieIngredient, removeSmoothieIngredient, removeAllIngredients } from '../actions/smoothieActions.js'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import Loading from '../components/shared/Loading'
+
 
 class SmoothieContainer extends Component {
 
+    loading = () => {
+        if (this.props.loading) {
+            return <Loading />
+        } else {
+            return <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+        }
+    }
 
     render() {
         return (
@@ -20,9 +29,7 @@ class SmoothieContainer extends Component {
                             removeSmoothieIngredient={this.props.removeSmoothieIngredient}
                             removeAllIngredients={this.props.removeAllIngredients}
                         />
-
-                        <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
-
+                        {this.loading()}
                     </Row>
                 </Container>
             </div>
@@ -32,7 +39,8 @@ class SmoothieContainer extends Component {
 
 const mapStateToProps = (state) => ({
     ingredients: state.smoothieReducer.ingredients,
-    smoothieIngredients: state.smoothieReducer.smoothieIngredients
+    smoothieIngredients: state.smoothieReducer.smoothieIngredients, 
+    loading: state.smoothieReducer.loading
 })
 
 const mapDispatchToProps = dispatch => ({
