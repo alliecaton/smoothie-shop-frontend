@@ -7,7 +7,7 @@ export default function cartReducer(state=  {
         case 'CHECKOUT': 
 
         const newOrder = {
-            // ingredientIds: action.payload.items,
+            ingredientIds: action.payload.items,
             totalPrice: action.payload.totalPrice, 
             customerName: action.payload.customerName, 
             address: action.payload.address, 
