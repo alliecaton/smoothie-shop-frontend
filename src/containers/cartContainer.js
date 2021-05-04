@@ -15,7 +15,7 @@ class CartContainer extends Component {
             <Container> 
                 <div>
                     <CartList removeCartItem={this.props.removeCartItem} items={this.props.items} />
-                    <CartTotal totalPrice={this.props.totalPrice} />
+                    <CartTotal cartTotal={this.props.cartTotal} />
                     <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
                 </div>
             </Container>
@@ -25,8 +25,8 @@ class CartContainer extends Component {
 
 const mapStateToProps = (state) => ({
     items: state.cartReducer.cartItems,
-    ingredientIds: state.cartReducer.ingredientIds,
-    totalPrice: state.smoothieReducer.smoothiePrice
+    ingredientIds: state.cartReducer.cartItems.ingredientIds,
+    cartTotal: state.cartReducer.cartTotal
 })
 
 const mapDispatchToProps = dispatch => ({
