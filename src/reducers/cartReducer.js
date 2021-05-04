@@ -15,6 +15,7 @@ export default function cartReducer(state= {
         }
 
         return {
+                ...state, 
                 cartItems: [...state.cartItems , newItem ], 
                 cartTotal: parseFloat(state.cartTotal) + parseFloat(newItem.itemPrice)
             }
@@ -24,6 +25,7 @@ export default function cartReducer(state= {
         const removedItem = state.cartItems.find(item => item.id === action.payload)
 
         return {
+            ...state,
             cartItems: state.cartItems.filter(item => item.id !== action.payload ), 
             cartTotal: parseFloat(state.cartTotal) - parseFloat(removedItem.itemPrice)
         }
@@ -31,7 +33,8 @@ export default function cartReducer(state= {
         case 'EMPTY_CART': 
         return {
             ...state,
-            cartItems: []
+            cartItems: [],
+            cartTotal: 0
         }
 
         default: 

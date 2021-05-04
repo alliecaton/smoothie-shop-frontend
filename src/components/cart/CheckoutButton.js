@@ -11,7 +11,6 @@ class CheckoutButton extends Component {
     }
     
     render() {
-        console.log(this.props.totalPrice)
         return (
             <div>
                 <Button variant="warning" onClick={this.displayCheckoutForm}>Checkout</Button>{' '}

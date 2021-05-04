@@ -5,7 +5,7 @@ const Ingredient = (props) => {
     return (
         <div className="unchecked">
             <Col >
-            <h4>{props.ingredient.name}</h4>
+            <h4>{props.ingredient.name} {props.ingredient.price}</h4>
             {/* <img className="ingredient-image" src={props.ingredient.image_url} /> */}
             </Col >
         </div>

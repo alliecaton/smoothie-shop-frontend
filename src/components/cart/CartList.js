@@ -18,7 +18,6 @@ class CartList extends Component {
 
     handleClick = (e) => {
         e.preventDefault();
-        console.log(e.target.value)
         this.setState( prevState => ({
             items: prevState.items.filter(item => item.id !== e.target.value )
         }));
@@ -28,7 +27,6 @@ class CartList extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <h5>Order:</h5>
