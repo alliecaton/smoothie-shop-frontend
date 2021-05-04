@@ -13,11 +13,17 @@ export const emptyCart = () => {
     }
 }
 
+export const removeCartItem = (id) => {
+    return {
+        type: 'REMOVE_ITEM', 
+        payload: id
+    }
+}
 
 export const checkout = (data) => {
     
         return (dispatch) => {
-            // dispatch({type: 'LOGIN_REQUEST_STARTED'})
+            dispatch({type: 'LOADING_POST'})
     
             return fetch('http://localhost:3001/orders', {
                 method: "POST",

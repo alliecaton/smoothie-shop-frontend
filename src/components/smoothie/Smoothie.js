@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Ingredient from './Ingredient'
-import { Col, Row } from 'react-bootstrap';
 
 
 class Smoothie extends Component {
