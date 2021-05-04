@@ -8,6 +8,7 @@ export default function cartReducer(state= {
         case 'ADD_ITEM': 
         
         const newItem = {
+            id: cuid(),
             ingredients: action.payload.smoothieIngredients,
             ingredientIds: action.payload.ingredientIds, 
             price: action.payload.price
@@ -17,12 +18,10 @@ export default function cartReducer(state= {
                 cartItems: [...state.cartItems , newItem ]
             }
 
-            // case 'REMOVE_ITEM': 
-            // return {
-            //     ...state,
-            //     cartItems: state.cartItems.filter(item => item.id !== action.payload )
-            // }
-
+        case 'REMOVE_ITEM': 
+        return {
+            cartItems: state.cartItems.filter(item => item.id !== action.payload )
+        }
 
         case 'EMPTY_CART': 
         return {

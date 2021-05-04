@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import CartTotal from '../components/cart/CartTotal'
 import CheckoutButton from '../components/cart/CheckoutButton'
 import { Container } from 'react-bootstrap'
+import { removeCartItem } from '../actions/cartActions.js'
+
 
 class CartContainer extends Component {
 
@@ -11,7 +13,7 @@ class CartContainer extends Component {
         return (
             <Container> 
                 <div>
-                    <CartList items={this.props.items} />
+                    <CartList removeCartItem={this.props.removeCartItem} items={this.props.items} />
                     <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
                     <CartTotal totalPrice={this.props.totalPrice} />
                 </div>
@@ -26,4 +28,8 @@ const mapStateToProps = (state) => ({
     totalPrice: state.smoothieReducer.smoothiePrice
 })
 
-export default connect(mapStateToProps)(CartContainer);
+const mapDispatchToProps = dispatch => ({
+    removeCartItem: (id) => dispatch(removeCartItem(id)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);
