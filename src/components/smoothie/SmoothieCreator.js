@@ -5,7 +5,7 @@ import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [], ingredientIds: [], totalPrice: this.props.totalPrice, error: ''}
+    state = { smoothieIngredients: [], ingredientIds: [], totalPrice: 0, error: ''}
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -14,7 +14,7 @@ class SmoothieCreator extends Component {
     renderIngredients = () => {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
-                <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient className={this.state.className} ingredient={ingredient} key={ingredient.id} isChecked={this.state.isChecked} /></label>
+                <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
                 <input className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
@@ -22,17 +22,17 @@ class SmoothieCreator extends Component {
 
     handleSelectionChange = (e) => {
         let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
-        this.setState({isChecked: !this.state.isChecked});
         if (e.target.checked) {
             this.setState( prevState => ({
                 ...prevState, 
-                totalPrice: this.props.totalPrice, 
+                totalPrice: parseFloat(prevState.totalPrice) + parseFloat(addedIng.price), 
                 smoothieIngredients: [...prevState.smoothieIngredients, addedIng], 
                 ingredientIds: [...prevState.ingredientIds, addedIng.id], 
             }));
             this.props.addSmoothieIngredient(addedIng)
         } else if (!e.target.checked) {
             this.setState( prevState => ({
+                totalPrice: parseFloat(prevState.totalPrice) - parseFloat(addedIng.price),
                 smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id ), 
                 ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id ), 
             }));
@@ -63,7 +63,7 @@ class SmoothieCreator extends Component {
     }
 
     render() {
-        console.log('creator state', this.state)
+        console.log(this.state.totalPrice)
         return (
             <div>
                 <Col>

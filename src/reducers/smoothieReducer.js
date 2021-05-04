@@ -43,7 +43,8 @@ const smoothieReducer = (state = {
             return {
                 ...state,
                 smoothieIngredients: [],
-                ingredientIds: []
+                ingredientIds: [], 
+                smoothiePrice: 0
             }
 
         default:
