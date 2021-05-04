@@ -39,11 +39,11 @@ class CheckoutForm extends Component {
                     <br></br>
                     <label>Please Enter Checkout Details</label><br></br>
 
-                    <label htmlFor="customerName">Name:</label>
+                    <label htmlFor="customerName">Name:</label><br></br>
                     <input id="customerName" type="text" name="customerName" onChange={this.handleChange} /><br></br>
 
-                    <label htmlFor="address">Address:</label>
-                    <textarea id="address" type="textarea" name="address" onChange={this.handleChange} /><br></br>
+                    <label htmlFor="address">Address:</label><br></br>
+                    <textarea id="address" type="textarea" name="address" onChange={this.handleChange} /><br></br><br></br>
 
                     <label htmlFor="cardnum">Card Number:</label>
                     <input id="cardnum" type="text" name="cardNumber" onChange={this.handleChange} /><br></br>

@@ -3,6 +3,7 @@ import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 class SmoothieCreator extends Component {
     
     state = { smoothieIngredients: [], ingredientIds: [], totalPrice: 0, error: ''}
@@ -71,7 +72,7 @@ class SmoothieCreator extends Component {
                     <h3>Select Ingredients:</h3>
                     {this.renderIngredients()}
                     {this.state.error}<br></br>
-                    <input onClick={(e)=> this.handleSubmit(e)} type="reset" value="Add Smoothie to Cart!" />
+                    <Button variant="outline-primary" onClick={(e)=> this.handleSubmit(e)}>Add Smoothie to Cart!</Button>
                 </form>
                 </Col>
             </div>

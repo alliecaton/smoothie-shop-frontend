@@ -3,12 +3,17 @@ import { Col } from 'react-bootstrap';
 
 const Ingredient = (props) => {
     return (
+        <Col >
         <div className="unchecked">
-            <Col >
-            <h4>{props.ingredient.name} {props.ingredient.price}</h4>
-            {/* <img className="ingredient-image" src={props.ingredient.image_url} /> */}
-            </Col >
+            <div className="ing-info">
+                <h4 className="ingredient-name">{props.ingredient.name}</h4>
+                <h5>{`$${props.ingredient.price}`}</h5>
+            </div>
+            <div className="ingredient-image">
+                <img src={props.ingredient.image_url} />
+            </div>
         </div>
+        </Col >
     );
 }
 
