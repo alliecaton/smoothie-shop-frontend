@@ -40,7 +40,7 @@ const NavBar = () => {
             </Link>
             
 
-            <Link className="nav-text" to="/smoothie">BUILD A SMOOTHIE</Link>
+            <Link className="nav-text justify-content-end" to="/smoothie">BUILD A SMOOTHIE</Link>
 
         <Navbar.Collapse className="justify-content-end">
             <CartCount />

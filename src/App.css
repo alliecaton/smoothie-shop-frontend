@@ -52,6 +52,11 @@ input[type="checkbox"] {
   display: none;
 }
 
+/* input[type="text"] {
+  box-shadow : none; 
+  border-radius: 3px;
+} */
+
 .checked {
   background-color: rgb(96, 156, 167);
   border-radius: 10px;
@@ -62,9 +67,19 @@ input[type="checkbox"] {
   margin: 10px;
 }
 
+.ingredient-image, .ing-info {
+    display: inline-block;
+    margin: 10px 0;
+}
 
 .ingredient-image {
-    width: 10%
+  margin: 5px;
+  width: auto;
+}
+
+img {
+  width: 10%;
+  vertical-align: middle;
 }
 
 .smoothie-container {
