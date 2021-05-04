@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartItem from './CartItem'
+import Button from 'react-bootstrap/Button';
 
 
 class CartList extends Component {
@@ -8,7 +9,10 @@ class CartList extends Component {
 
     renderItems = () => {
         return this.props.items.map((item) => (
-            <li><CartItem item={item} key={item.name} /><button onClick={this.handleClick} value={item.id} >X</button></li>
+           <div className="cart-list">
+                <div className="x-button"><Button onClick={this.handleClick} value={item.id} variant="outline-danger">X</Button >{' '}</div>
+                <div className="cart-item"><CartItem item={item} key={item.name} /></div>
+            </div>
         ))
     }
 

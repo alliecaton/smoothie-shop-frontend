@@ -4,10 +4,10 @@ const CartItem = (props) => {
     return (
         // show img instead of name here
         
-        <div>
+        <div className="item-wrapper">
             {props.item.ingredients.map(ingredient => (
             <span>
-                {`  ${ingredient.name}, ${ingredient.price}`} || 
+                {`${ingredient.name}  `}
             </span>
         ))}
         </div>
