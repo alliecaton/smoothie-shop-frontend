@@ -5,7 +5,7 @@ import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [], ingredientIds: [], error: ''}
+    state = { smoothieIngredients: [], ingredientIds: [], totalPrice: this.props.totalPrice, error: ''}
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -25,6 +25,8 @@ class SmoothieCreator extends Component {
         this.setState({isChecked: !this.state.isChecked});
         if (e.target.checked) {
             this.setState( prevState => ({
+                ...prevState, 
+                totalPrice: this.props.totalPrice, 
                 smoothieIngredients: [...prevState.smoothieIngredients, addedIng], 
                 ingredientIds: [...prevState.ingredientIds, addedIng.id], 
             }));
@@ -34,7 +36,7 @@ class SmoothieCreator extends Component {
                 smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id ), 
                 ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id ), 
             }));
-            this.props.removeSmoothieIngredient(addedIng.id)
+            this.props.removeSmoothieIngredient(addedIng)
         }
     }
 
@@ -61,6 +63,7 @@ class SmoothieCreator extends Component {
     }
 
     render() {
+        console.log('creator state', this.state)
         return (
             <div>
                 <Col>

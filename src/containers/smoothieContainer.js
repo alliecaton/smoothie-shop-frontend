@@ -7,6 +7,7 @@ import { Container, Row } from 'react-bootstrap';
 import Loading from '../components/shared/Loading'
 
 
+
 class SmoothieContainer extends Component {
 
     loading = () => {
@@ -28,6 +29,7 @@ class SmoothieContainer extends Component {
                             addSmoothieIngredient={this.props.addSmoothieIngredient}
                             removeSmoothieIngredient={this.props.removeSmoothieIngredient}
                             removeAllIngredients={this.props.removeAllIngredients}
+                            totalPrice={this.props.totalPrice}
                         />
                         {this.loading()}
                     </Row>
@@ -40,7 +42,8 @@ class SmoothieContainer extends Component {
 const mapStateToProps = (state) => ({
     ingredients: state.smoothieReducer.ingredients,
     smoothieIngredients: state.smoothieReducer.smoothieIngredients, 
-    loading: state.smoothieReducer.loading
+    loading: state.smoothieReducer.loading, 
+    totalPrice: state.smoothieReducer.smoothiePrice
 })
 
 const mapDispatchToProps = dispatch => ({

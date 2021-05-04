@@ -10,10 +10,8 @@ export default function cartReducer(state= {
         const newItem = {
             id: cuid(),
             ingredients: action.payload.smoothieIngredients,
-            ingredientIds: action.payload.ingredientIds, 
-            price: action.payload.price
+            ingredientIds: action.payload.ingredientIds
         }
-        
         return {
                 cartItems: [...state.cartItems , newItem ]
             }
