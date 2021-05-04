@@ -13,7 +13,7 @@ class CheckoutButton extends Component {
     render() {
         return (
             <div>
-                <Button variant="outline-info" onClick={this.displayCheckoutForm}>Checkout</Button>{' '}
+                <Button variant="warning" onClick={this.displayCheckoutForm}>Checkout</Button>{' '}
                 <div style={{display: this.state.formDisplayed ? 'block' : 'none' }}>
                     <CheckoutForm items={this.props.items} totalPrice={this.props.totalPrice} />
                 </div>

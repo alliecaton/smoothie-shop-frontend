@@ -14,15 +14,15 @@ class SmoothieCreator extends Component {
     renderIngredients = () => {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
-                <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
+                <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient className={this.state.className} ingredient={ingredient} key={ingredient.id} isChecked={this.state.isChecked} /></label>
                 <input className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
 
-    //refactor this ew
     handleSelectionChange = (e) => {
         let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
+        this.setState({isChecked: !this.state.isChecked});
         if (e.target.checked) {
             this.setState( prevState => ({
                 smoothieIngredients: [...prevState.smoothieIngredients, addedIng], 
@@ -32,14 +32,14 @@ class SmoothieCreator extends Component {
         } else if (!e.target.checked) {
             this.setState( prevState => ({
                 smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id ), 
-                ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id )
+                ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id ), 
             }));
             this.props.removeSmoothieIngredient(addedIng.id)
         }
     }
 
     unCheck = () => {
-        let x = document.getElementsByClassName("checkbox");
+        const x = document.getElementsByClassName("checkbox");
         for(let i=0; i<x.length; i++) {
            x[i].checked = false;
          }   
@@ -61,7 +61,6 @@ class SmoothieCreator extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <Col>

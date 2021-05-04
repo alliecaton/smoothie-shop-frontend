@@ -14,8 +14,8 @@ class CartContainer extends Component {
             <Container> 
                 <div>
                     <CartList removeCartItem={this.props.removeCartItem} items={this.props.items} />
-                    <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
                     <CartTotal totalPrice={this.props.totalPrice} />
+                    <CheckoutButton items={this.props.items} totalPrice={this.props.totalPrice} />
                 </div>
             </Container>
         );

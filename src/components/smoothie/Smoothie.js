@@ -4,21 +4,18 @@ import Ingredient from './Ingredient'
 
 class Smoothie extends Component {
 
-    state = { smoothieIngredients: this.props.smoothieIngredients }
-
     renderIngredients = () => {
         return this.props.smoothieIngredients.map((ingredient) => (
-            <li key={ingredient.id}><Ingredient ingredient={ingredient} key={ingredient.id} /></li>
+            <div><Ingredient ingredient={ingredient} key={ingredient.id} /></div>
         ))
     }
 
     render() {
         return (
             <div>
-
                 Current Ingredients: 
                     <ul>
-                    {this.renderIngredients()}
+                        {this.renderIngredients()}
                     </ul>
             </div>
         );
