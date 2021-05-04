@@ -1,7 +1,26 @@
 
-.homepage {
+html {
+  height: 100%;
+}
+
+body {
+  background-color: rgb(253, 204, 212);
   background-image: url('./images/smoothie-bg.jpg') ;
-  opacity: 80%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.body-wrapper {
+  background-color: rgb(255, 242, 242, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.store-name {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: auto;
 }
 
 .description {
@@ -9,7 +28,8 @@
   opacity: 70%;
   border-radius: 5px;
   padding: 10px;
-  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
   height: auto;
 }
@@ -89,4 +109,8 @@ svg {
   margin: 10px;
   border-radius: 5px;
   background-color:rgb(250, 245, 240)
+}
+
+.nav-bar-edit {
+  border-radius: 20px;
 }

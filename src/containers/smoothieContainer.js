@@ -20,8 +20,9 @@ class SmoothieContainer extends Component {
 
     render() {
         return (
-            <div className="smoothie-container">
-                <Container >
+            <Container className="body-wrapper" >
+                <div className="smoothie-container">
+                    <div className="inner-wrapper">
                     <Row>
                         <SmoothieCreator 
                             fetchIngredients={this.props.fetchIngredients} 
@@ -33,8 +34,9 @@ class SmoothieContainer extends Component {
                         />
                         {this.loading()}
                     </Row>
+                    </div>
+                </div>
                 </Container>
-            </div>
         );
     }
 }

@@ -13,10 +13,14 @@ class CartContainer extends Component {
         console.log('mapped', this.props.totalPrice)
         return (
             <Container> 
-                <div>
-                    <CartList removeCartItem={this.props.removeCartItem} items={this.props.items} />
-                    <CartTotal cartTotal={this.props.cartTotal} />
-                    <CheckoutButton items={this.props.items} totalPrice={this.props.cartTotal} />
+                <div className="body-wrapper">
+                    <div className="inner-wrapper">
+                        <div>
+                            <CartList removeCartItem={this.props.removeCartItem} items={this.props.items} />
+                            <CartTotal cartTotal={this.props.cartTotal} />
+                            <CheckoutButton items={this.props.items} totalPrice={this.props.cartTotal} />
+                        </div>
+                    </div>
                 </div>
             </Container>
         );
