@@ -1,3 +1,5 @@
+import promiseMiddleware from 'redux-promise';
+
 const smoothieReducer = (state = { 
     ingredients: [], 
     smoothieIngredients: [], 
@@ -32,7 +34,9 @@ const smoothieReducer = (state = {
         case 'REMOVE_FROM_SMOOTHIE': 
             return {
                 ...state,
-                smoothieIngredients: state.smoothieIngredients.filter(ingredient => ingredient.id !== action.payload )
+                smoothieIngredients: state.smoothieIngredients.filter(ingredient => ingredient.id !== action.payload.id ),
+                ingredientIds: state.ingredientIds.filter(id => id !== action.payload.id ),
+                smoothiePrice: parseFloat(state.smoothiePrice) - action.payload.id
             }
 
         case 'REMOVE_ALL_INGREDIENTS': 
