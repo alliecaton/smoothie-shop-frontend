@@ -15,7 +15,7 @@ class SmoothieCreator extends Component {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
                 <label htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+                <input className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
@@ -37,9 +37,17 @@ class SmoothieCreator extends Component {
             this.props.removeSmoothieIngredient(addedIng.id)
         }
     }
+
+    unCheck = () => {
+        let x = document.getElementsByClassName("checkbox");
+        for(let i=0; i<x.length; i++) {
+           x[i].checked = false;
+         }   
+      }
   
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+        this.unCheck()
             if (this.state.smoothieIngredients.length > 0) {
                 this.props.addCartItem(this.state)
                 this.setState({smoothieIngredients: [], ingredientIds: []})
