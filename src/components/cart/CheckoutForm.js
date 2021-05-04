@@ -13,7 +13,8 @@ class CheckoutForm extends Component {
         cardNumber: '', 
         cardExp: '',
         cardSecurityNum: '',
-        note: ''
+        note: '', 
+        message: ''
     }
 
     handleChange = (e) => {
@@ -22,16 +23,18 @@ class CheckoutForm extends Component {
             [e.target.name]: e.target.value, 
         }))
     }
-
+ 
     handleSubmit = (e) => {
         e.preventDefault()
         this.props.checkout(this.state)
         this.props.emptyCart()
+        this.setState({message: "Your order is on the way!"})
     }
 
     render() {
         return (
             <div>
+                <h1>{this.state.message}</h1>
                 <form>
                     <br></br>
                     <label>Please Enter Checkout Details</label><br></br>
