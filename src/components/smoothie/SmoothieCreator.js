@@ -19,7 +19,7 @@ class SmoothieCreator extends Component {
 
     renderIngredients = () => {
         return this.props.ingredients.map((ingredient) => (
-            <div key={ingredient.id} >
+            <div className="unchecked" key={ingredient.id} >
                 <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
                 <input checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false} className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
