@@ -6,7 +6,12 @@ import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: this.props.smoothieIngredients, ingredientIds: this.props.ingredientIds, totalPrice: 0, error: ''}
+    state = { 
+        smoothieIngredients: this.props.smoothieIngredients, 
+        ingredientIds: this.props.ingredientIds, 
+        totalPrice: this.props.totalPrice, 
+        error: ''
+    }
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -16,7 +21,7 @@ class SmoothieCreator extends Component {
         return this.props.ingredients.map((ingredient) => (
             <div key={ingredient.id} >
                 <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+                <input checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false} className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
@@ -35,7 +40,7 @@ class SmoothieCreator extends Component {
             this.setState( prevState => ({
                 totalPrice: parseFloat(prevState.totalPrice) - parseFloat(addedIng.price),
                 smoothieIngredients: prevState.smoothieIngredients.filter(ingredient => ingredient.id !== addedIng.id ), 
-                ingredientIds: prevState.smoothieIngredients.filter(id => id !== addedIng.id ), 
+                ingredientIds: prevState.ingredientIds.filter(id => id !== addedIng.id ), 
             }));
             this.props.removeSmoothieIngredient(addedIng)
         }
