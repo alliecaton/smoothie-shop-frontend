@@ -2,15 +2,11 @@ import React from 'react';
 
 const CartItem = (props) => {
     return (
-        // show img instead of name here
-        
-        <div className="item-wrapper">
+        <>
             {props.item.ingredients.map(ingredient => (
-            <span>
-                {`${ingredient.name}  `}
-            </span>
+            <img className="cart-image" alt={ingredient.name} src={ingredient.image_url} />
         ))}
-        </div>
+        </>
     );
 }
 

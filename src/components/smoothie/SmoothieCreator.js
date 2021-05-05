@@ -75,9 +75,9 @@ class SmoothieCreator extends Component {
                 <Col>
                 <form>
                     <h3>Select Ingredients:</h3>
+                    <Button variant="outline-primary" onClick={(e)=> this.handleSubmit(e)}>Add Smoothie to Cart!</Button>
                     {this.renderIngredients()}
                     {this.state.error}<br></br>
-                    <Button variant="outline-primary" onClick={(e)=> this.handleSubmit(e)}>Add Smoothie to Cart!</Button>
                 </form>
                 </Col>
             </div>
