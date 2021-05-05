@@ -36,7 +36,7 @@ const smoothieReducer = (state = {
                 ...state,
                 smoothieIngredients: state.smoothieIngredients.filter(ingredient => ingredient.id !== action.payload.id ),
                 ingredientIds: state.ingredientIds.filter(id => id !== action.payload.id ),
-                smoothiePrice: parseFloat(state.smoothiePrice) - action.payload.id
+                smoothiePrice: parseFloat(state.smoothiePrice) - parseFloat(action.payload.price)
             }
 
         case 'REMOVE_ALL_INGREDIENTS': 
