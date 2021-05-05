@@ -39,19 +39,22 @@ class CheckoutForm extends Component {
     render() {
         return (
             <Container >
-            <div>
+            <div >
                 <br></br>
-                <Row>
-                    <h1>{this.state.message}</h1>
-                    <form>
-                        <br></br>
+                <h1>{this.state.message}</h1>
+                    <form className="checkout-form">
                         <label>Please Enter Checkout Details</label><br></br>
+                    <Row>
+                        <br></br>
                         <Col>
                             <label htmlFor="customerName">* Name:</label><br></br>
                             <input id="customerName" type="text" name="customerName" onChange={this.handleChange} /><br></br>
 
                             <label htmlFor="address">* Address:</label><br></br>
-                            <textarea id="address" type="textarea" name="address" onChange={this.handleChange} /><br></br><br></br>
+                            <textarea id="address" type="textarea" name="address" onChange={this.handleChange} /><br></br>
+
+                            <label htmlFor="note">Customer Note:</label><br></br>
+                            <input id="note" type="text" name="note" onChange={this.handleChange} /><br></br>
                         </Col>
                         <Col>
                             <label htmlFor="cardnum">* Card Number:</label>
@@ -60,15 +63,14 @@ class CheckoutForm extends Component {
                             <input id="cardexp" type="text" name="cardExp" onChange={this.handleChange} /><br></br>
 
                             <label htmlFor="cardsec">* Security Code:</label>
-                            <input id="cardsec" type="text" name="cardSecurityNum" onChange={this.handleChange} /><br></br>
-
-                            <label htmlFor="note">Customer Note:</label>
-                            <input id="note" type="text" name="note" onChange={this.handleChange} /><br></br>
+                            <input id="cardsec" type="password" name="cardSecurityNum" onChange={this.handleChange} /><br></br>
+                            <br></br>
+                            <Button variant="success" onClick={(e) => this.handleSubmit(e)} >Submit Order</Button>
                         </Col>
-                        <Button variant="success" onClick={(e) => this.handleSubmit(e)} >Submit Order</Button>
+
+                    </Row>
 
                     </form >
-                </Row>
             </div>
             </Container>
         );
