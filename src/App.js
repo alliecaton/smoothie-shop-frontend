@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import CartContainer from './containers/cartContainer';
 import {
   BrowserRouter as Router,
@@ -12,6 +13,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 class App extends Component {
   render() {
     return (
@@ -20,14 +22,11 @@ class App extends Component {
             <NavBar />
           <div>
             <Switch>
-              <Route path="/cart">
-                <CartContainer />
+              <Route path="/cart" component={CartContainer}>
               </Route>
-              <Route path="/smoothie">
-                <SmoothieContainer />
+              <Route path="/smoothie" component={SmoothieContainer}>
               </Route>
-            <Route path="/">
-                <Home />
+            <Route path="/" component={Home}>
               </Route>
             </Switch>
           </div>

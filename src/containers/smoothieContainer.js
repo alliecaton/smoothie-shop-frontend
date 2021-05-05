@@ -3,8 +3,9 @@ import Smoothie from '../components/smoothie/Smoothie'
 import SmoothieCreator from '../components/smoothie/SmoothieCreator'
 import { connect } from 'react-redux'
 import { fetchIngredients, addSmoothieIngredient, removeSmoothieIngredient, removeAllIngredients } from '../actions/smoothieActions.js'
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Loading from '../components/shared/Loading'
+
 
 
 
@@ -14,7 +15,7 @@ class SmoothieContainer extends Component {
         if (this.props.loading) {
             return <Loading />
         } else {
-            return <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+            return <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
         }
     }
 
@@ -24,6 +25,7 @@ class SmoothieContainer extends Component {
                 <div className="smoothie-container">
                     <div className="inner-wrapper">
                     <Row>
+                        <Col>
                         <SmoothieCreator 
                             fetchIngredients={this.props.fetchIngredients} 
                             ingredients={this.props.ingredients} 
@@ -31,7 +33,10 @@ class SmoothieContainer extends Component {
                             removeSmoothieIngredient={this.props.removeSmoothieIngredient}
                             removeAllIngredients={this.props.removeAllIngredients}
                             totalPrice={this.props.totalPrice}
+                            smoothieIngredients={this.props.smoothieIngredients}
+                            ingredientIds={this.props.ingredientIds}
                         />
+                        </Col>
                         {this.loading()}
                     </Row>
                     </div>
@@ -45,7 +50,8 @@ const mapStateToProps = (state) => ({
     ingredients: state.smoothieReducer.ingredients,
     smoothieIngredients: state.smoothieReducer.smoothieIngredients, 
     loading: state.smoothieReducer.loading, 
-    totalPrice: state.smoothieReducer.smoothiePrice
+    totalPrice: state.smoothieReducer.smoothiePrice,
+    ingredientIds: state.smoothieReducer.ingredientIds
 })
 
 const mapDispatchToProps = dispatch => ({

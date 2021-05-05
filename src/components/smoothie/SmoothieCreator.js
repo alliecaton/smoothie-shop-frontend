@@ -6,7 +6,7 @@ import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 class SmoothieCreator extends Component {
     
-    state = { smoothieIngredients: [], ingredientIds: [], totalPrice: 0, error: ''}
+    state = { smoothieIngredients: this.props.smoothieIngredients, ingredientIds: this.props.ingredientIds, totalPrice: 0, error: ''}
 
     componentDidMount() {
         this.props.fetchIngredients()
@@ -23,7 +23,7 @@ class SmoothieCreator extends Component {
 
     handleSelectionChange = (e) => {
         let addedIng = this.props.ingredients.find( ing => `${ing.id}` === e.target.value )
-        if (e.target.checked) {
+        if (e.target.checked && !this.state.ingredientIds.find(id => id === e.target.value)) {
             this.setState( prevState => ({
                 ...prevState, 
                 totalPrice: parseFloat(prevState.totalPrice) + parseFloat(addedIng.price), 
@@ -50,10 +50,10 @@ class SmoothieCreator extends Component {
   
     handleSubmit = (e) => {
         e.preventDefault()
-        this.unCheck()
+        // this.unCheck()
             if (this.state.smoothieIngredients.length > 0) {
                 this.props.addCartItem(this.state)
-                this.setState({smoothieIngredients: [], ingredientIds: []})
+                this.setState({ smoothieIngredients: [], ingredientIds: [], totalPrice: 0})
                 this.props.removeAllIngredients()
             } else {
                 this.setState({
@@ -64,7 +64,7 @@ class SmoothieCreator extends Component {
     }
 
     render() {
-        console.log(this.state.totalPrice)
+        console.log(this.state)
         return (
             <div>
                 <Col>
