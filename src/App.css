@@ -48,9 +48,9 @@ body {
   background-color: rgb(96, 156, 167);
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
-}
+} */
 
 /* input[type="text"] {
   box-shadow : none; 

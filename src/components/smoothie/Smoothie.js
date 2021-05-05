@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Ingredient from './Ingredient'
 
 
+
 class Smoothie extends Component {
 
     renderIngredients = () => {
@@ -13,7 +14,7 @@ class Smoothie extends Component {
     render() {
         return (
             <div>
-                Current Ingredients: 
+                <h3>Current Ingredients: </h3>
                     <ul>
                         {this.renderIngredients()}
                     </ul>
