@@ -10,9 +10,9 @@ class CheckoutForm extends Component {
         totalPrice: this.props.totalPrice, 
         customerName: '', 
         address: '', 
-        cardNumber: '', 
-        cardExp: '',
-        cardSecurityNum: '',
+        // cardNumber: '', 
+        // cardExp: '',
+        // cardSecurityNum: '',
         note: '', 
         message: ''
     }

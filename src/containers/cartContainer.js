@@ -10,7 +10,6 @@ import { removeCartItem } from '../actions/cartActions.js'
 class CartContainer extends Component {
 
     render() {
-        console.log('mapped', this.props.totalPrice)
         return (
             <Container> 
                 <div className="body-wrapper">
