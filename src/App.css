@@ -48,16 +48,22 @@ body {
   background-color: rgb(96, 156, 167);
 }
 
-/* input[type="checkbox"] {
+input[type="checkbox"] {
   display: none;
-} */
+}
+
+.unchecked:checked {
+  display: none;
+  background-color: rgb(96, 156, 167);
+
+}
 
 /* input[type="text"] {
   box-shadow : none; 
   border-radius: 3px;
 } */
 
-.checked {
+/* .checked {
   background-color: rgb(96, 156, 167);
   border-radius: 10px;
   display: flex;
@@ -65,20 +71,27 @@ body {
   justify-content: flex-start;
   padding: 15px;
   margin: 10px;
-}
+} */
 
-.ingredient-image, .ing-info {
-    display: inline-block;
-    margin: 10px 0;
-}
-
-.ingredient-image {
+.ingredient-name, .ingredient-price {
   margin: 5px;
   width: auto;
 }
 
-img {
+.ingredient-price {
+  color: grey;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.ingredient-image {
+
   width: 10%;
+  height: auto;
   vertical-align: middle;
 }
 
