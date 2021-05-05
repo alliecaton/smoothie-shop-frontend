@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { checkout, emptyCart } from '../../actions/cartActions'
-
+import Button from 'react-bootstrap/Button';
 
 class CheckoutForm extends Component {
 
@@ -26,38 +26,43 @@ class CheckoutForm extends Component {
  
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.checkout(this.state)
-        this.props.emptyCart()
-        this.setState({message: "Your order is on the way!"})
+        if (this.state.items.length > 0 && this.state.customerName !=='' && this.setState.address !== '') {
+            this.props.checkout(this.state)
+            this.props.emptyCart()
+            this.setState({message: "Your order is on the way!"})
+        } else {
+            this.setState({message: "Please fill out all required fields"})
+        }
     }
 
     render() {
         return (
             <div>
+                <br></br>
                 <h1>{this.state.message}</h1>
                 <form>
                     <br></br>
                     <label>Please Enter Checkout Details</label><br></br>
 
-                    <label htmlFor="customerName">Name:</label><br></br>
+                    <label htmlFor="customerName">* Name:</label><br></br>
                     <input id="customerName" type="text" name="customerName" onChange={this.handleChange} /><br></br>
 
-                    <label htmlFor="address">Address:</label><br></br>
+                    <label htmlFor="address">* Address:</label><br></br>
                     <textarea id="address" type="textarea" name="address" onChange={this.handleChange} /><br></br><br></br>
 
-                    <label htmlFor="cardnum">Card Number:</label>
+                    <label htmlFor="cardnum">* Card Number:</label>
                     <input id="cardnum" type="text" name="cardNumber" onChange={this.handleChange} /><br></br>
 
-                    <label htmlFor="cardexp">Expiration Date (MM/YY):</label>
+                    <label htmlFor="cardexp">* Expiration Date (MM/YY):</label>
                     <input id="cardexp" type="text" name="cardExp" onChange={this.handleChange} /><br></br>
 
-                    <label htmlFor="cardsec">Security Code:</label>
+                    <label htmlFor="cardsec">* Security Code:</label>
                     <input id="cardsec" type="text" name="cardSecurityNum" onChange={this.handleChange} /><br></br>
 
                     <label htmlFor="note">Customer Note:</label>
                     <input id="note" type="text" name="note" onChange={this.handleChange} /><br></br>
 
-                    <button onClick={(e) => this.handleSubmit(e)} >Submit Order</button>
+                    <Button variant="success" onClick={(e) => this.handleSubmit(e)} >Submit Order</Button>
 
                 </form >
             </div>

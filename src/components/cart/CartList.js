@@ -11,7 +11,7 @@ class CartList extends Component {
         return this.props.items.map((item) => (
            <div className="cart-list">
                 <div className="x-button"><Button onClick={this.handleClick} value={item.id} variant="outline-danger">X</Button >{' '}</div>
-                <div className="cart-item"><CartItem item={item} key={item.name} /></div>
+                <div className="cart-item"><CartItem item={item} key={item.id} /></div>
             </div>
         ))
     }
