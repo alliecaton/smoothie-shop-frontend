@@ -11,6 +11,7 @@ import SmoothieContainer from './containers/smoothieContainer'
 import Home from './components/shared/Home'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AdminContainer from './components/admin/adminContainer'
 
 
 
@@ -26,7 +27,9 @@ class App extends Component {
               </Route>
               <Route path="/smoothie" component={SmoothieContainer}>
               </Route>
-            <Route path="/" component={Home}>
+              <Route path="/admin" component={AdminContainer}>
+              </Route>
+              <Route path="/" component={Home}>
               </Route>
             </Switch>
           </div>
