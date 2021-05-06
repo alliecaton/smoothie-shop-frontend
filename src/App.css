@@ -48,15 +48,9 @@ body {
   background-color: rgb(96, 156, 167);
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
-}
-
-.unchecked:checked {
-  display: none;
-  background-color: rgb(96, 156, 167);
-
-}
+} */
 
 input[type="text"], textarea, input[type="password"] {
   width: 100%;
@@ -107,6 +101,15 @@ input[type="text"], textarea, input[type="password"] {
   width: auto;
 }
 
+.ing-label, .ing-input {
+  display: inline-block;
+}
+
+/* .input:checked + .unchecked {
+  border-style: solid;
+  background-color: red;
+} */
+
 .ingredient-price {
   color: grey;
 }
@@ -118,8 +121,9 @@ input[type="text"], textarea, input[type="password"] {
 }
 
 .ingredient-image {
-  width: 10%;
+  width: 20%;
   height: auto;
+  padding-right: 5px;
   vertical-align: middle;
 }
 

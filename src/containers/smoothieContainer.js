@@ -37,7 +37,9 @@ class SmoothieContainer extends Component {
                             ingredientIds={this.props.ingredientIds}
                         />
                         </Col>
+                        <div className="body-wrapper">
                         {this.loading()}
+                        </div>
                     </Row>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CartItem from './CartItem'
 import Button from 'react-bootstrap/Button';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 
 class CartList extends Component {
@@ -31,8 +32,10 @@ class CartList extends Component {
     render() {
         return (
             <div>
+                <Scrollbars style={{ width: 1075, height: 550 }}>
                 <h5>Order:</h5>
-                {this.renderItems()}
+                    {this.renderItems()}
+                </Scrollbars>
             </div>
         );
     }
