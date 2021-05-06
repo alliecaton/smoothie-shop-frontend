@@ -8,6 +8,17 @@ body {
   background-image: url('./images/smoothie-bg.jpg') ;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+.title {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  height: auto;
+  font-family: "Gill Sans", sans-serif
 }
 
 .body-wrapper {
@@ -19,18 +30,18 @@ body {
 .store-name {
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 100%;
   height: auto;
 }
 
 .description {
   background-color: whitesmoke;
-  opacity: 70%;
+  opacity: 90%;
   border-radius: 5px;
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 60%;
   height: auto;
 }
 
