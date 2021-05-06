@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 class SmoothieCreator extends Component {
     
@@ -20,9 +21,11 @@ class SmoothieCreator extends Component {
 
     renderIngredients = () => {
         return this.props.ingredients.map((ingredient) => (
-            <div className="unchecked" key={ingredient.id} >
-                <label className={this.state.className} htmlFor={ingredient.id} ><Ingredient ingredient={ingredient} key={ingredient.id} /></label>
-                <input checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false} className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+            <div className="unchecked" >
+                <label htmlFor={ingredient.id} className="ing-label" >
+                    <Ingredient ingredient={ingredient} key={ingredient.id} />
+                </label>
+                <input className="ing-input" checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false} className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }
@@ -72,12 +75,15 @@ class SmoothieCreator extends Component {
     render() {
         console.log(this.state)
         return (
-            <div>
+            <div className="body-wrapper">
                 <Col>
                 <form>
-                    <h3>Select Ingredients:</h3>
                     <Button variant="outline-primary" onClick={(e)=> this.handleSubmit(e)}>Add Smoothie to Cart!</Button>
-                    {this.renderIngredients()}
+                    <br></br><br></br>
+                    <h3>Select Ingredients:</h3>
+                    <Scrollbars style={{ width: 350, height: 600 }}>
+                        {this.renderIngredients()}
+                    </Scrollbars>
                     {this.state.error}<br></br>
                 </form>
                 </Col>
