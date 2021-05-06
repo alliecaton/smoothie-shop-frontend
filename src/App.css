@@ -75,13 +75,20 @@ input[type="text"], textarea, input[type="password"] {
 
 .container-image {
   position: relative;
+  height: 750px;
+  width: 550px;
+
+}
+
+.cup {
+  height: 100%; 
+  width: 100%
 }
 
 .ings {
   position: absolute;
-  top: 50px;
-  left: 10px; 
-   
+  top: 260px;
+  left: 250px; 
   padding: 5px;
 }
 
@@ -114,6 +121,12 @@ input[type="text"], textarea, input[type="password"] {
   width: 10%;
   height: auto;
   vertical-align: middle;
+}
+
+.current-ingredient-image {
+  width: 19%;
+  padding: 2px;
+
 }
 
 .cart-list {

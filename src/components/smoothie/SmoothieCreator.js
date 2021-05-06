@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
 import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+
 class SmoothieCreator extends Component {
     
     state = { 
