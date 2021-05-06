@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Order from './Order'
 
 class Orders extends Component {
     
@@ -14,11 +15,19 @@ class Orders extends Component {
             })
     }
 
+    renderOrders = () => {
+        return this.state.orders.map((order) => (
+            <div>
+                <Order order={order} />
+            </div>
+        ))
+    }
+
     render() {
-        console.log(this.state)
+        console.log('order state', this.state)
         return (
             <div>
-                hi
+                {this.renderOrders()}
             </div>
         );
     }
