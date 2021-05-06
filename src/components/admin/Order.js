@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
+import Product from '../cart/CartItem.js'
 
 class Order extends Component {
+    
+    renderSmoothie = () => {
+        return this.props.order.products.map((product) => (
+            <div>
+                {product.id}<Product item={product} />
+            </div>
+        ))
+    }
+    
     render() {
-        console.log(this.props.order)
+        console.log('the smoothie',this.props.order.products)
         return (
             <div>
-                {this.props.order.id}
+                <div>{` ${this.props.order.id} ${this.props.order.address} ${this.props.order.total_price}`} </div>
+                {this.renderSmoothie()}
+                {/* // ingredients */}
+                {/* // status */}
             </div>
         );
     }

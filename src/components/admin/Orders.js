@@ -17,7 +17,7 @@ class Orders extends Component {
 
     renderOrders = () => {
         return this.state.orders.map((order) => (
-            <div>
+            <div className="body-wrapper">
                 <Order order={order} />
             </div>
         ))
