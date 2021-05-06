@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Orders from './Orders'
 
-class adminContainer extends Component {
+class Order extends Component {
     render() {
+        console.log(this.props.order)
         return (
             <div>
-                <Orders />
+                {this.props.order.id}
             </div>
         );
     }
 }
 
-export default adminContainer;
+export default Order;
