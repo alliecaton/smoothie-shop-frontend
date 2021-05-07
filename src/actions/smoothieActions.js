@@ -3,7 +3,7 @@
 //fetching actions
 export const fetchIngredients = () => {
     return (dispatch) => {
-        fetch('http://localhost:3001/ingredients')
+        fetch('https://boiling-earth-59543.herokuapp.com/ingredients')
         .then(r => {
             return r.json()
         })
