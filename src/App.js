@@ -23,13 +23,13 @@ class App extends Component {
             <NavBar />
           <div>
             <Switch>
-              <Route path="/cart" component={CartContainer}>
+              <Route path="/smoothie-shop-frontend/cart" component={CartContainer}>
               </Route>
-              <Route path="/smoothie" component={SmoothieContainer}>
+              <Route path="/smoothie-shop-frontend/smoothie" component={SmoothieContainer}>
               </Route>
-              <Route path="/admin" component={AdminContainer}>
+              <Route path="/smoothie-shop-frontend/admin" component={AdminContainer}>
               </Route>
-              <Route path="/" component={Home}>
+              <Route path="/smoothie-shop-frontend/" component={Home}>
               </Route>
             </Switch>
           </div>
