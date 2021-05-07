@@ -25,7 +25,7 @@ export const checkout = (data) => {
         return (dispatch) => {
             dispatch({type: 'LOADING_POST'})
     
-            return fetch('http://localhost:3001/orders', {
+            return fetch('https://boiling-earth-59543.herokuapp.com/orders', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
