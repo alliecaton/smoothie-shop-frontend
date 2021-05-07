@@ -1,5 +1,5 @@
 # Fruit Stand
-![Fruit Stand Logo](https://github.com/alliecaton/smoothie-shop-frontend/blob/9eada6cfb7ede24ac613c600a2734a8ca92fcf46/src/images/logo.png)
+![Fruit Stand Logo](https://github.com/alliecaton/smoothie-shop-frontend/blob/8df268d6c3d5e2a3d4217e22e3013fc11219ecf6/src/images/screenshot.png)
 
 Fruit Stand is an ecommerce site for a smoothie shop that does not exist!
 
