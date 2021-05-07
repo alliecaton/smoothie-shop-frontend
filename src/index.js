@@ -9,7 +9,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import cartReducer from './reducers/cartReducer';
 import smoothieReducer from './reducers/smoothieReducer'
 import checkoutReducer from './reducers/checkoutReducer'
-import { BrowserRouter as Router}  from "react-router-dom";
 
 
 const rootReducer = combineReducers({
@@ -25,9 +24,7 @@ const store = createStore(rootReducer,
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store} >
-      <Router>
       <App />
-      </Router>
     </Provider >
   </React.StrictMode>,
   document.getElementById('root')

@@ -10,7 +10,7 @@ const NavBar = () => {
     <div>
     <Container className="nav-bar-edit">
         <Navbar bg="light" className="nav-bar-edit">
-             <Link to="/">
+             <Link to="/smoothie-shop-frontend/">
              <Navbar.Brand>
                 <svg className="svg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink"
                 viewBox="-100 -50 600 600" xmlns="preserve">
@@ -40,11 +40,11 @@ const NavBar = () => {
             </Link>
             
 
-            <Link className="nav-text justify-content-end" to="/smoothie">BUILD A SMOOTHIE</Link>
+            <Link className="nav-text justify-content-end" to="/smoothie-shop-frontend/smoothie">BUILD A SMOOTHIE</Link>
 
         <Navbar.Collapse className="justify-content-end">
             <CartCount />
-            <Link to="/cart">
+            <Link to="/smoothie-shop-frontend/cart">
                 <HiShoppingCart />
             </Link>
         </Navbar.Collapse>
