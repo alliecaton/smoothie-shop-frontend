@@ -15,7 +15,7 @@ class SmoothieContainer extends Component {
         if (this.props.loading) {
             return <Loading />
         } else {
-            return <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
+            return <Row><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Row>
         }
     }
 

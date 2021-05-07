@@ -32,10 +32,10 @@ class CartList extends Component {
     render() {
         return (
             <div>
-                <Scrollbars style={{ width: 1075, height: 500 }}>
+
                 <h5>Order:</h5>
                     {this.renderItems()}
-                </Scrollbars>
+
             </div>
         );
     }

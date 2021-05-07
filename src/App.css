@@ -7,7 +7,7 @@ body {
   background-color: rgb(253, 204, 212);
   background-image: url('./images/smoothie-bg.jpg') ;
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   position: relative;
   min-height: 100vh;
 }
@@ -85,6 +85,10 @@ input[type="text"], textarea, input[type="password"] {
 
 }
 
+.smoothie-wrapper {
+  margin: 20px;
+}
+
 .cup {
   height: 100%; 
   width: 100%
@@ -97,15 +101,6 @@ input[type="text"], textarea, input[type="password"] {
   padding: 5px;
 }
 
-/* .checked {
-  background-color: rgb(96, 156, 167);
-  border-radius: 10px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  padding: 15px;
-  margin: 10px;
-} */
 
 .ingredient-name, .ingredient-price {
   margin: 5px;
@@ -116,19 +111,20 @@ input[type="text"], textarea, input[type="password"] {
   display: inline-block;
 }
 
-/* .input:checked + .unchecked {
-  border-style: solid;
-  background-color: red;
-} */
 
 .ingredient-price {
   color: grey;
+}
+
+h3 {
+  padding: 10px;
 }
 
 .info-wrapper {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  padding-left: 30px;
 }
 
 .ingredient-image {

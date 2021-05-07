@@ -5,6 +5,7 @@ import image from '../../images/fruit.svg'
 const Home = () => {
     return (
         <div className="homepage">
+            
             <Container>
             <div>
                 <img className="store-name" src={image} />

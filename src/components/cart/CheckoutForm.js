@@ -37,6 +37,7 @@ class CheckoutForm extends Component {
     }
 
     render() {
+        console.log(this.state.totalPrice)
         return (
             <Container >
             <div >

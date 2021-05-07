@@ -15,7 +15,7 @@ class Smoothie extends Component {
 
     render() {
         return (
-            <div>
+            <div className="smoothie-wrapper">
                 <h3>Current Ingredients: </h3>
                 <div className="container-image">
                     <img className="cup" src={image} />

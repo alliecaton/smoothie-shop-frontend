@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
-import { Col } from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Scrollbars } from 'react-custom-scrollbars';
 
