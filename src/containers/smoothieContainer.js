@@ -14,8 +14,6 @@ class SmoothieContainer extends Component {
     loading = () => {
         if (this.props.loading) {
             return <Loading />
-        } else {
-            return <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
         }
     }
 
@@ -26,6 +24,7 @@ class SmoothieContainer extends Component {
                     <div className="inner-wrapper">
                     <Row>
                         <Col>
+                        {this.loading()}
                         <SmoothieCreator 
                             fetchIngredients={this.props.fetchIngredients} 
                             ingredients={this.props.ingredients} 
@@ -38,7 +37,7 @@ class SmoothieContainer extends Component {
                         />
                         </Col>
                         <div className="body-wrapper">
-                        {this.loading()}
+                            <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
                         </div>
                     </Row>
                     </div>

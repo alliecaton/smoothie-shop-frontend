@@ -23,7 +23,7 @@ export const removeCartItem = (id) => {
 export const checkout = (data) => {
     
         return (dispatch) => {
-            dispatch({type: 'LOADING_POST'})
+            dispatch({type: 'LOADING'})
     
             return fetch('https://boiling-earth-59543.herokuapp.com/orders', {
                 method: "POST",

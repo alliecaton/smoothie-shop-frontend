@@ -1,9 +1,10 @@
-
+// https://boiling-earth-59543.herokuapp.com/ingredients
 
 //fetching actions
 export const fetchIngredients = () => {
     return (dispatch) => {
-        fetch('https://boiling-earth-59543.herokuapp.com/ingredients')
+        dispatch({type: 'LOADING_INGREDIENTS'})
+        fetch('http://localhost:3001/ingredients')
         .then(r => {
             return r.json()
         })
