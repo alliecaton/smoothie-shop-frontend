@@ -4,7 +4,7 @@
 export const fetchIngredients = () => {
     return (dispatch) => {
         dispatch({type: 'LOADING_INGREDIENTS'})
-        fetch('http://localhost:3001/ingredients')
+        fetch('https://boiling-earth-59543.herokuapp.com/ingredients')
         .then(r => {
             return r.json()
         })
