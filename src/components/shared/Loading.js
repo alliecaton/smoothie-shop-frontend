@@ -1,4 +1,3 @@
-import { css } from '@emotion/core'
 import ClipLoader from 'react-spinners/ClipLoader'
 
 import React from 'react';

@@ -11,7 +11,6 @@ import SmoothieContainer from './containers/smoothieContainer'
 import Home from './components/shared/Home'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AdminContainer from './components/admin/adminContainer'
 
 
 
@@ -23,12 +22,12 @@ class App extends Component {
             <NavBar />
           <div>
             <Switch>
-              <Route path="/smoothie-shop-frontend/cart" component={CartContainer}>
+            <Route path="/smoothie-shop-frontend/cart" component={CartContainer}>
               </Route>
               <Route path="/smoothie-shop-frontend/smoothie" component={SmoothieContainer}>
               </Route>
-              <Route path="/smoothie-shop-frontend/admin" component={AdminContainer}>
-              </Route>
+              {/* <Route path="/smoothie-shop-frontend/admin" component={AdminContainer}>
+              </Route> */}
               <Route path="/smoothie-shop-frontend/" component={Home}>
               </Route>
             </Switch>
