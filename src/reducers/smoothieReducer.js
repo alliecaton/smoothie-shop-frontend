@@ -1,4 +1,4 @@
-import promiseMiddleware from 'redux-promise';
+
 
 const smoothieReducer = (state = { 
     ingredients: [], 

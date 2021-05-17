@@ -5,9 +5,12 @@ import { HiShoppingCart } from 'react-icons/hi';
 import { Container } from 'react-bootstrap'
 import CartCount from './CartCount.js'
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+
     return (
     <div>
+    
     <Container className="nav-bar-edit">
         <Navbar bg="light" className="nav-bar-edit">
              <Link to="/smoothie-shop-frontend/">

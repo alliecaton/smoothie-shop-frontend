@@ -11,10 +11,13 @@ import SmoothieContainer from './containers/smoothieContainer'
 import Home from './components/shared/Home'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AdminContainer from './components/admin/adminContainer'
 
 
 
 class App extends Component {
+
+
   render() {
     return (
       <div className="App">
@@ -26,8 +29,8 @@ class App extends Component {
               </Route>
               <Route path="/smoothie-shop-frontend/smoothie" component={SmoothieContainer}>
               </Route>
-              {/* <Route path="/smoothie-shop-frontend/admin" component={AdminContainer}>
-              </Route> */}
+              <Route path="/smoothie-shop-frontend/admin" component={AdminContainer}>
+              </Route>
               <Route path="/smoothie-shop-frontend/" component={Home}>
               </Route>
             </Switch>

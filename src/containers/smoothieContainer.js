@@ -7,8 +7,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Loading from '../components/shared/Loading'
 
 
-
-
 class SmoothieContainer extends Component {
 
     loading = () => {
@@ -36,7 +34,7 @@ class SmoothieContainer extends Component {
                             ingredientIds={this.props.ingredientIds}
                         />
                         </Col>
-                        <div className="body-wrapper">
+                        <div >
                             <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
                         </div>
                     </Row>

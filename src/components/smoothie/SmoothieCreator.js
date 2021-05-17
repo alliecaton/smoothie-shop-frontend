@@ -59,7 +59,6 @@ class SmoothieCreator extends Component {
   
     handleSubmit = (e) => {
         e.preventDefault()
-        // this.unCheck()
             if (this.state.smoothieIngredients.length > 0) {
                 this.props.addCartItem(this.state)
                 this.setState({ smoothieIngredients: [], ingredientIds: [], totalPrice: 0})
