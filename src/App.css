@@ -7,7 +7,7 @@ body {
   background-color: rgb(253, 204, 212);
   background-image: url('./images/smoothie-bg.jpg') ;
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   position: relative;
   min-height: 100vh;
 }
@@ -22,10 +22,16 @@ body {
 }
 
 .body-wrapper {
-
   background-color: rgb(255, 242, 242, 0.8);
   padding: 20px;
   margin: 20px;
+  border-radius: 10px;
+}
+
+.smoothie-wrapper {
+  background-color: rgb(255, 242, 242, 0.8);
+  padding: 20px;
+  /* margin: 20px; */
   border-radius: 10px;
 }
 

@@ -21,7 +21,9 @@ class SmoothieContainer extends Component {
                 <div className="smoothie-container">
                     <div className="inner-wrapper">
                     <Row>
-                        <Col>
+                        <div>
+
+                        {/* <Col> */}
                         {this.loading()}
                         <SmoothieCreator 
                             fetchIngredients={this.props.fetchIngredients} 
@@ -33,10 +35,14 @@ class SmoothieContainer extends Component {
                             smoothieIngredients={this.props.smoothieIngredients}
                             ingredientIds={this.props.ingredientIds}
                         />
-                        </Col>
-                        <div >
-                            <Col><Smoothie smoothieIngredients={this.props.smoothieIngredients} /></Col>
+                        {/* </Col> */}
                         </div>
+                        <div>
+                            {/* <Col> */}
+                                <Smoothie smoothieIngredients={this.props.smoothieIngredients} />
+                            {/* </Col> */}
+                        </div>
+
                     </Row>
                     </div>
                 </div>

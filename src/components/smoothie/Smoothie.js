@@ -9,13 +9,13 @@ class Smoothie extends Component {
 
     renderIngredients = () => {
         return this.props.smoothieIngredients.map((ingredient) => (
-            <div ><CurrentIngredients ingredient={ingredient} key={ingredient.id} /></div>
+            <div><CurrentIngredients ingredient={ingredient} key={ingredient.id} /></div>
         ))
     }
 
     render() {
         return (
-            <div>
+            <div className="smoothie-wrapper">
                 <h3>Current Ingredients: </h3>
                 <div className="container-image">
                     <img className="cup" src={image} />
