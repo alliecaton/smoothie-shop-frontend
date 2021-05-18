@@ -13,10 +13,9 @@ class Order extends Component {
     }
     
     render() {
-        console.log('the smoothie',this.props.order.products)
         return (
             <div>
-                <StatusCheckbox />
+                <StatusCheckbox orderId={this.props.order.id}/>
                 <div >{` ${this.props.order.id} ${this.props.order.address} ${this.props.order.total_price}`} </div>
                 {this.renderSmoothie()}
                 {/* // ingredients */}

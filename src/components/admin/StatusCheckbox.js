@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
+import humps from 'humps';
 
 class StatusCheckbox extends Component {
     
-    state= { checked: false }
+    state= { checked: false, status: 'open' }
 
     handleChange = (e) => {
         console.log('hit')
-        this.setState({checked: true})
-        // post to DB 
+        this.setState({checked: true, status: 'completed'})
     }
+
+    componentDidUpdate = () => {
+        fetch (`http://localhost:3001/orders/${this.props.orderId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(humps.decamelizeKeys({order: {status: this.state.status}}))
+        })
+            .then(resp => resp.json())
+            .then(json => {
+                console.log('this is the posted checkout obj', json)
+            })
+    }
+
     
     render() {
         return (
