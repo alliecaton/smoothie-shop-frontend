@@ -19,6 +19,7 @@ class Orders extends Component {
     renderOrders = () => {
         return this.state.orders.map((order) => (
             <div className="body-wrapper">
+                Order: {order.id}
                 <Order order={order} />
             </div>
         ))
