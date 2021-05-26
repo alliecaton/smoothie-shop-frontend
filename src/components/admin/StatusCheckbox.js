@@ -32,6 +32,8 @@ class StatusCheckbox extends Component {
                 <input value={this.state.checked} type="checkbox" onChange={(e) => {this.handleChange(e)}} />
                 </form>
             </div>
+
+            
         );
     }
 }
