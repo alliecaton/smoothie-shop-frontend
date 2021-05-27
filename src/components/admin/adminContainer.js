@@ -21,28 +21,24 @@ class adminContainer extends Component {
         this.state.allOrders.map((order) => {
                 if (order.status === "open") {
                     this.setState(prevState => ({ 
-                        prevState, 
-                        open: [...prevState, order]
+                        ...prevState, 
+                        open: [...prevState.open, order]
                     }))
                 } else {
                     this.setState(prevState => ({ 
-                        prevState, 
-                        completed: [...prevState, order]
-                    }))
+                        ...prevState, 
+                        completed: [...prevState.completed, order]
+                    })) 
                 }
             }) 
-            return (
-                <div className="body-wrapper">
-                    <OpenOrders orders={this.state.open} />
-                    <CompletedOrders orders={this.state.completed} />
-                </div>
-            )
+
     }
     
     render() {
         return (
             <div className="body-wrapper">
-                {this.assignOrders()}
+                    <OpenOrders orders={this.state.open} />
+                    <CompletedOrders orders={this.state.completed} />
             </div>
         );
     }
