@@ -2,22 +2,10 @@ import React, { Component } from 'react';
 import Order from './Order'
 import {Container} from 'react-bootstrap'
 
-class Orders extends Component {
+class OpenOrders extends Component {
     
-    state = {orders: []}
-    
-    componentDidMount = () => {
-        return fetch('https://boiling-earth-59543.herokuapp.com/orders')
-            .then(r => {
-                return r.json()
-            })
-            .then(json => {
-                this.setState({orders: json})
-            })
-    }
-
     renderOrders = () => {
-        return this.state.orders.map((order) => (
+        return this.props.orders.map((order) => (
             <div className="body-wrapper">
                 Order: {order.id}
                 <Order order={order} />
@@ -26,7 +14,7 @@ class Orders extends Component {
     }
 
     render() {
-        console.log('order state', this.state)
+        console.log('order state', this.props)
             return (
                 <Container >
                     <div>
@@ -37,4 +25,4 @@ class Orders extends Component {
     }
 }
 
-export default Orders;
+export default OpenOrders;
