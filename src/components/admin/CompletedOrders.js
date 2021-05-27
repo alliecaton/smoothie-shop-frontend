@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Order from './Order'
 import {Container} from 'react-bootstrap'
 
-class OpenOrders extends Component {
-    
+class CompletedOrders extends Component {
     renderOrders = () => {
         return this.props.orders.map((order) => (
             <div className="body-wrapper">
@@ -17,7 +16,7 @@ class OpenOrders extends Component {
         console.log('order state', this.props)
             return (
                 <Container >
-                    <h1>Open Orders</h1>
+                    <h1>Completed Orders</h1>
                     <div>
                         {this.renderOrders()}
                     </div>
@@ -26,4 +25,4 @@ class OpenOrders extends Component {
     }
 }
 
-export default OpenOrders;
+export default CompletedOrders;
