@@ -8,6 +8,7 @@ class StatusCheckbox extends Component {
     handleChange = (e) => {
         console.log('hit')
         this.setState({checked: true, status: 'completed'})
+        this.props.reRender()
     }
 
     componentDidUpdate = () => {

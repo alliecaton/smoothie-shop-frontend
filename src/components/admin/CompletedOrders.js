@@ -3,11 +3,15 @@ import Order from './Order'
 import {Container} from 'react-bootstrap'
 
 class CompletedOrders extends Component {
+    reRender = () => {
+        this.setState()
+    }
+
     renderOrders = () => {
         return this.props.orders.map((order) => (
             <div key={order.id} className="body-wrapper">
                 Order: {order.id}
-                <Order order={order} />
+                <Order order={order} reRender={this.reRender} />
             </div>
         ))
     }

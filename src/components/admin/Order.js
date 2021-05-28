@@ -15,7 +15,7 @@ class Order extends Component {
     render() {
         let checkbox
         if (this.props.order.status === "open") {
-            checkbox = <StatusCheckbox orderId={this.props.order.id}/>
+            checkbox = <StatusCheckbox orderId={this.props.order.id} reRender={this.props.reRender} />
         }
 
         return (
