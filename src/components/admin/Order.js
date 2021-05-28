@@ -13,13 +13,18 @@ class Order extends Component {
     }
     
     render() {
+        let checkbox
+        if (this.props.order.status === "open") {
+            checkbox = <StatusCheckbox orderId={this.props.order.id}/>
+        }
+
         return (
             <div>
-                <StatusCheckbox orderId={this.props.order.id}/>
+                {checkbox}
                 <div >{` ${this.props.order.id} ${this.props.order.address} ${this.props.order.total_price}`} </div>
                 {this.renderSmoothie()}
                 {/* // ingredients */}
-                {/* // status */}
+                {this.props.order.status}
             </div>
         );
     }

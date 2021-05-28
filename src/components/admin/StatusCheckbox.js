@@ -3,7 +3,7 @@ import humps from 'humps';
 
 class StatusCheckbox extends Component {
     
-    state= { checked: false, status: 'open' }
+    state= { checked: null, status: 'open' }
 
     handleChange = (e) => {
         console.log('hit')
