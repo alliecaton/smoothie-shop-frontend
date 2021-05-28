@@ -6,7 +6,7 @@ class OpenOrders extends Component {
     
     renderOrders = () => {
         return this.props.orders.map((order) => (
-            <div className="body-wrapper">
+            <div key={order.id} className="body-wrapper">
                 Order: {order.id}
                 <Order order={order} />
             </div>

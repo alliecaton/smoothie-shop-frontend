@@ -33,6 +33,10 @@ class adminContainer extends Component {
             }) 
 
     }
+
+    reRender = () => {
+        this.setState()
+    }
     
     render() {
         return (

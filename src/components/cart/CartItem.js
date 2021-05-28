@@ -4,7 +4,7 @@ const CartItem = (props) => {
     return (
         <>
             {props.item.ingredients.map(ingredient => (
-            <img className="cart-image" alt={ingredient.name} src={ingredient.image_url} />
+            <img key={ingredient.id} className="cart-image" alt={ingredient.name} src={ingredient.image_url} />
         ))}
         </>
     );

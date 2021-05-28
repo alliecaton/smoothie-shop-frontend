@@ -18,10 +18,9 @@ class StatusCheckbox extends Component {
             },
             body: JSON.stringify(humps.decamelizeKeys({order: {status: this.state.status}}))
         })
-            .then(resp => resp.json())
-            .then(json => {
-                console.log('this is the posted checkout obj', json)
-            })
+            // .then(resp => resp.json())
+            // .then(json => {
+            // })
     }
 
     
@@ -33,7 +32,7 @@ class StatusCheckbox extends Component {
                 </form>
             </div>
 
-            
+
         );
     }
 }

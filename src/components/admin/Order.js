@@ -6,7 +6,7 @@ class Order extends Component {
     
     renderSmoothie = () => {
         return this.props.order.products.map((product) => (
-            <div>
+            <div key={product.id}>
                 {product.id}<Product item={product} />
             </div>
         ))
