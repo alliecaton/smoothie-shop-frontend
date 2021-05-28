@@ -3,7 +3,7 @@ import humps from 'humps';
 
 class StatusCheckbox extends Component {
     
-    state= { checked: null, status: 'open' }
+    state= { checked: false, status: 'open' }
 
     handleChange = (e) => {
         console.log('hit')
@@ -18,9 +18,6 @@ class StatusCheckbox extends Component {
             },
             body: JSON.stringify(humps.decamelizeKeys({order: {status: this.state.status}}))
         })
-            // .then(resp => resp.json())
-            // .then(json => {
-            // })
     }
 
     

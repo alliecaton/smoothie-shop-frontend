@@ -23,9 +23,7 @@ export const removeCartItem = (id) => {
 export const checkout = (data) => {
     
         return (dispatch) => {
-            dispatch({type: 'LOADING'})
-    
-            return fetch('https://boiling-earth-59543.herokuapp.com/orders', {
+            return fetch('http://localhost:3001/orders', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

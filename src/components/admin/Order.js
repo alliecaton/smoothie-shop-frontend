@@ -7,7 +7,7 @@ class Order extends Component {
     renderSmoothie = () => {
         return this.props.order.products.map((product) => (
             <div key={product.id}>
-                {product.id}<Product item={product} />
+                <Product item={product} />
             </div>
         ))
     }
@@ -21,10 +21,12 @@ class Order extends Component {
         return (
             <div>
                 {checkbox}
-                <div >{` ${this.props.order.id} ${this.props.order.address} ${this.props.order.total_price}`} </div>
+                <div><strong>Customer Name:</strong> {this.props.order.customer_name} </div>
+                <div><strong>Address:</strong> {this.props.order.address} </div>
+                <div><strong>Price:</strong> {this.props.order.total_price}</div>
+                <div><strong>Note:</strong> {this.props.order.note} </div>
+                <div><strong>Status: </strong>{this.props.order.status}</div>
                 {this.renderSmoothie()}
-                {/* // ingredients */}
-                {this.props.order.status}
             </div>
         );
     }
