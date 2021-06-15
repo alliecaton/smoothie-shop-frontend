@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/smoothie-shop-frontend/static/css/main.f5fcedbe.chunk.css",
-    "main.js": "/smoothie-shop-frontend/static/js/main.93841f22.chunk.js",
-    "main.js.map": "/smoothie-shop-frontend/static/js/main.93841f22.chunk.js.map",
+    "main.css": "/smoothie-shop-frontend/static/css/main.14d3353e.chunk.css",
+    "main.js": "/smoothie-shop-frontend/static/js/main.eeea68a7.chunk.js",
+    "main.js.map": "/smoothie-shop-frontend/static/js/main.eeea68a7.chunk.js.map",
     "runtime-main.js": "/smoothie-shop-frontend/static/js/runtime-main.43e59d22.js",
     "runtime-main.js.map": "/smoothie-shop-frontend/static/js/runtime-main.43e59d22.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/smoothie-shop-frontend/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.7d0f15af.chunk.js": "/smoothie-shop-frontend/static/js/2.7d0f15af.chunk.js",
-    "static/js/2.7d0f15af.chunk.js.map": "/smoothie-shop-frontend/static/js/2.7d0f15af.chunk.js.map",
+    "static/js/2.825bb219.chunk.js": "/smoothie-shop-frontend/static/js/2.825bb219.chunk.js",
+    "static/js/2.825bb219.chunk.js.map": "/smoothie-shop-frontend/static/js/2.825bb219.chunk.js.map",
     "index.html": "/smoothie-shop-frontend/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/smoothie-shop-frontend/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.f5fcedbe.chunk.css.map": "/smoothie-shop-frontend/static/css/main.f5fcedbe.chunk.css.map",
-    "static/js/2.7d0f15af.chunk.js.LICENSE.txt": "/smoothie-shop-frontend/static/js/2.7d0f15af.chunk.js.LICENSE.txt",
+    "static/css/main.14d3353e.chunk.css.map": "/smoothie-shop-frontend/static/css/main.14d3353e.chunk.css.map",
+    "static/js/2.825bb219.chunk.js.LICENSE.txt": "/smoothie-shop-frontend/static/js/2.825bb219.chunk.js.LICENSE.txt",
     "static/media/fruit.7d1cbaf9.svg": "/smoothie-shop-frontend/static/media/fruit.7d1cbaf9.svg",
     "static/media/App.css": "/smoothie-shop-frontend/static/media/smoothie-bg.da84bae4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.43e59d22.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.7d0f15af.chunk.js",
-    "static/css/main.f5fcedbe.chunk.css",
-    "static/js/main.93841f22.chunk.js"
+    "static/js/2.825bb219.chunk.js",
+    "static/css/main.14d3353e.chunk.css",
+    "static/js/main.eeea68a7.chunk.js"
   ]
 }
