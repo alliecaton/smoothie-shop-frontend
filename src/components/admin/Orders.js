@@ -5,15 +5,15 @@ class Orders extends Component {
     
     state = {orders: []}
     
-    // componentDidMount = () => {
-    //     return fetch('http://localhost:3001/orders')
-    //         .then(r => {
-    //             return r.json()
-    //         })
-    //         .then(json => {
-    //             this.setState({orders: json})
-    //         })
-    // }
+    componentDidMount = () => {
+        return fetch('http://localhost:3001/orders')
+            .then(r => {
+                return r.json()
+            })
+            .then(json => {
+                this.setState({orders: json})
+            })
+    }
 
     renderOrders = () => {
         return this.state.orders.map((order) => (

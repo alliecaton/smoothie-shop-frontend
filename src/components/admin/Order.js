@@ -17,6 +17,7 @@ class Order extends Component {
             <div>
                 <div >{` ${this.props.order.id} ${this.props.order.address} ${this.props.order.total_price}`} </div>
                 {this.renderSmoothie()}
+                {`${this.props.order.status}`}
                 {/* // ingredients */}
                 {/* // status */}
             </div>

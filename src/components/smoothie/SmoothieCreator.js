@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Ingredient from './Ingredient'
 import { connect } from 'react-redux'
 import { addCartItem } from '../../actions/cartActions'
-import { Col, Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { Scrollbars } from 'react-custom-scrollbars';
 
@@ -25,7 +25,7 @@ class SmoothieCreator extends Component {
                 <label htmlFor={ingredient.id} className="ing-label" >
                     <Ingredient ingredient={ingredient} key={ingredient.id} />
                 </label>
-                <input className="ing-input" checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false} className="checkbox" type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
+                <input className="ing-input" checked={this.state.ingredientIds.find(id => ingredient.id === id) ? true : false}  type="checkbox" id={ingredient.id} value={ingredient.id} name={ingredient.id} onChange={(e) => this.handleSelectionChange(e)} /><br></br>
             </div>
         ))
     }

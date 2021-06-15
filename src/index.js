@@ -15,7 +15,8 @@ import {BrowserRouter as Router } from 'react-router-dom'
 const rootReducer = combineReducers({
     cartReducer: cartReducer, 
     smoothieReducer: smoothieReducer, 
-    checkoutReducer: checkoutReducer
+    checkoutReducer: checkoutReducer,
+    // adminReducer: adminReducer
 })
 
 const store = createStore(rootReducer, 
